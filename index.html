@@ -37,7 +37,6 @@
             line-height: 1.6;
         }
 
-        /* Design Futuriste Minimaliste */
         body {
             position: relative;
         }
@@ -61,7 +60,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Navigation Style Agence */
         .nav {
             position: fixed;
             top: 0;
@@ -102,7 +100,24 @@
             color: var(--text-main);
         }
 
-        /* Hero Section */
+        .lang-btn {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: transparent;
+            border: 1px solid var(--border-futur);
+            padding: 0.4rem 0.8rem;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+
         .hero {
             min-height: 100vh;
             display: flex;
@@ -122,7 +137,6 @@
             font-weight: 600;
         }
 
-        /* TON NOM - PARFAIT SUR MOBILE ET PC */
         .hero h1 {
             font-family: var(--font-serif);
             font-size: clamp(2.8rem, 8vw, 6.5rem);
@@ -167,7 +181,6 @@
             color: var(--accent);
         }
 
-        /* Sections Grid Agence */
         .section {
             padding: 8rem 2rem;
             max-width: 1200px;
@@ -231,7 +244,6 @@
             line-height: 1.6;
         }
 
-        /* Formulaire Minimaliste Luxe */
         .form-group {
             margin-bottom: 2.5rem;
         }
@@ -273,7 +285,6 @@
             border-top: 1px solid var(--border);
         }
 
-        /* Responsive Mobile */
         @media (max-width: 768px) {
             .nav { padding: 1rem; }
             .nav-links { display: none; }
@@ -288,84 +299,102 @@
     <nav class="nav">
         <div class="nav-logo">R.GHIASI</div>
         <ul class="nav-links">
-            <li><a href="#about">01 / Agence</a></li>
-            <li><a href="#expertise">02 / Écosystème</a></li>
-            <li><a href="#contact">03 / Contact</a></li>
+            <li><a href="#about" data-fr="01 / Agence" data-en="01 / Agency">01 / Agence</a></li>
+            <li><a href="#expertise" data-fr="02 / Écosystème" data-en="02 / Ecosystem">02 / Écosystème</a></li>
+            <li><a href="#contact" data-fr="03 / Contact" data-en="03 / Contact">03 / Contact</a></li>
         </ul>
-        <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 1px;">FR</div>
+        <button class="lang-btn" id="langBtn">EN</button>
     </nav>
 
     <header class="hero">
-        <div class="hero-location">STRASBOURG, FRANCE // HAUTE EXIGENCE</div>
+        <div class="hero-location" data-fr="STRASBOURG, FRANCE // HAUTE EXIGENCE" data-en="STRASBOURG, FRANCE // HIGH STANDARDS">STRASBOURG, FRANCE // HAUTE EXIGENCE</div>
         
         <h1>Rabnawaz<span>Ghiasi</span></h1>
         
-        <p class="hero-tagline">Architecte de projets et de trajectoires. Nous concevons des écosystèmes solides, ancrés sur la clarté mentale, l'entrepreneuriat de pointe et l'acquisition d'actifs immobiliers durables.</p>
-        <a href="#contact" class="btn">Initier un projet</a>
+        <p class="hero-tagline" data-fr="Architecte de projets et de trajectoires. Nous concevons des écosystèmes solides, ancrés sur la clarté mentale, l'entrepreneuriat de pointe et l'acquisition d'actifs immobiliers durables." data-en="Architect of projects and trajectories. We design robust ecosystems, rooted in mental clarity, cutting-edge entrepreneurship, and the acquisition of sustainable real estate assets.">Architecte de projets et de trajectoires. Nous concevons des écosystèmes solides, ancrés sur la clarté mentale, l'entrepreneuriat de pointe et l'acquisition d'actifs immobiliers durables.</p>
+        <a href="#contact" class="btn" data-fr="Initier un projet" data-en="Initiate a project">Initier un projet</a>
     </header>
 
     <main>
         <section class="section" id="about">
-            <span class="section-num">01 // LE MANIFESTE</span>
-            <h2 class="section-title">Bâtir avec conscience.<br>Exécuter avec précision.</h2>
-            <p style="font-size: 1.25rem; font-weight: 300; max-width: 800px; color: var(--text-muted); line-height: 1.8;">
+            <span class="section-num" data-fr="01 // LE MANIFESTE" data-en="01 // THE MANIFESTO">01 // LE MANIFESTE</span>
+            <h2 class="section-title" data-fr="Bâtir avec conscience.<br>Exécuter avec précision." data-en="Build with awareness.<br>Execute with precision.">Bâtir avec conscience.<br>Exécuter avec précision.</h2>
+            <p style="font-size: 1.25rem; font-weight: 300; max-width: 800px; color: var(--text-muted); line-height: 1.8;" data-fr="La dispersion est l'erreur des amateurs. Nous croyons en une approche chirurgicale : maîtriser les fondations intérieures d'un homme avant d'y injecter des stratégies d'affaires ou des investissements d'envergure. Une vision claire ne s'emprunte pas, elle se construit." data-en="Scattering is the amateur's mistake. We believe in a surgical approach: mastering a person's inner foundations before injecting business strategies or large-scale investments. A clear vision cannot be borrowed, it must be built.">
                 La dispersion est l'erreur des amateurs. Nous croyons en une approche chirurgicale : maîtriser les fondations intérieures d'un homme avant d'y injecter des stratégies d'affaires ou des investissements d'envergure. Une vision claire ne s'emprunte pas, elle se construit.
             </p>
         </section>
 
         <section class="section" id="expertise">
-            <span class="section-num">02 // PÔLES D'EXPERTISE</span>
-            <h2 class="section-title">Quatre piliers,<br>une seule synergie.</h2>
+            <span class="section-num" data-fr="02 // PÔLES D'EXPERTISE" data-en="02 // AREAS OF EXPERTISE">02 // PÔLES D'EXPERTISE</span>
+            <h2 class="section-title" data-fr="Quatre piliers,<br>une seule synergie." data-en="Four pillars,<br>one single synergy.">Quatre piliers,<br>une seule synergie.</h2>
             
             <div class="grid">
                 <div class="card">
                     <span class="card-num">// 01</span>
-                    <h3 class="card-title">Ingénierie Mentale</h3>
-                    <p class="card-p">Discipline supérieure, clarté décisionnelle et structure psychologique. Forger le leader avant le projet.</p>
+                    <h3 class="card-title" data-fr="Ingénierie Mentale" data-en="Mental Engineering">Ingénierie Mentale</h3>
+                    <p class="card-p" data-fr="Discipline supérieure, clarté décisionnelle et structure psychologique. Forger le leader avant le projet." data-en="Superior discipline, decisional clarity, and psychological structure. Forging the leader before the project.">Discipline supérieure, clarté décisionnelle et structure psychologique. Forger le leader avant le projet.</p>
                 </div>
                 <div class="card">
                     <span class="card-num">// 02</span>
-                    <h3 class="card-title">Business Systèmes</h3>
-                    <p class="card-p">Création et structuration de projets d'affaires robustes, étape par étape, loin de la spéculation éphémère.</p>
+                    <h3 class="card-title" data-fr="Business Systèmes" data-en="Business Systems">Business Systèmes</h3>
+                    <p class="card-p" data-fr="Création et structuration de projets d'affaires robustes, étape par étape, loin de la spéculation éphémère." data-en="Creation and structuring of robust business projects, step by step, far from short-lived speculation.">Création et structuration de projets d'affaires robustes, étape par étape, loin de la spéculation éphémère.</p>
                 </div>
                 <div class="card">
                     <span class="card-num">// 03</span>
-                    <h3 class="card-title">Actifs Immobiliers</h3>
-                    <p class="card-p">Transformation des flux financiers en patrimoine tangible et de prestige. Bâtir pour durer à travers les époques.</p>
+                    <h3 class="card-title" data-fr="Actifs Immobiliers" data-en="Real Estate Assets">Actifs Immobiliers</h3>
+                    <p class="card-p" data-fr="Transformation des flux financiers en patrimoine tangible et de prestige. Bâtir pour durer à travers les époques." data-en="Transforming financial flows into tangible and prestigious heritage. Building to last across generations.">Transformation des flux financiers en patrimoine tangible et de prestige. Bâtir pour durer à travers les époques.</p>
                 </div>
                 <div class="card">
                     <span class="card-num">// 04</span>
-                    <h3 class="card-title" style="letter-spacing: -0.5px;">Médias & Influence</h3>
-                    <p class="card-p">Prise de parole internationale multi-langues. Diffuser des idées profondes auprès de communautés engagées.</p>
+                    <h3 class="card-title" data-fr="Médias & Influence" data-en="Media & Influence">Médias & Influence</h3>
+                    <p class="card-p" data-fr="Prise de parole internationale multi-langues. Diffuser des idées profondes auprès de communautés engagées." data-en="International multi-language public speaking. Broadcasting profound ideas to engaged communities.">Prise de parole internationale multi-langues. Diffuser des idées profondes auprès de communautés engagées.</p>
                 </div>
             </div>
         </section>
 
         <section class="section" id="contact">
-            <span class="section-num">03 // SÉLECTION</span>
-            <h2 class="section-title">Entrer en relation.</h2>
+            <span class="section-num" data-fr="03 // SÉLECTION" data-en="03 // SELECTION">03 // SÉLECTION</span>
+            <h2 class="section-title" data-fr="Entrer en relation." data-en="Get in touch.">Entrer en relation.</h2>
             
             <form action="https://formspree.io/f/xvggpzee" method="POST" style="max-width: 600px;">
                 <div class="form-group">
-                    <label class="form-label">Votre nom complet</label>
-                    <input type="text" name="name" class="form-input" placeholder="Ex: Jean Dupont" required>
+                    <label class="form-label" data-fr="Votre nom complet" data-en="Your full name">Votre nom complet</label>
+                    <input type="text" name="name" class="form-input" data-fr="Ex: Jean Dupont" data-en="Ex: John Doe" placeholder="Ex: Jean Dupont" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Adresse de contact</label>
+                    <label class="form-label" data-fr="Adresse de contact" data-en="Contact email">Adresse de contact</label>
                     <input type="email" name="_replyto" class="form-input" placeholder="Ex: nom@agence.com" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Nature de votre vision</label>
-                    <textarea name="message" class="form-input" rows="4" placeholder="Décrivez succinctement vos ambitions..." style="resize:none;" required></textarea>
+                    <label class="form-label" data-fr="Nature de votre vision" data-en="Nature of your vision">Nature de votre vision</label>
+                    <textarea name="message" class="form-input" rows="4" data-fr="Décrivez succinctement vos ambitions..." data-en="Briefly describe your ambitions..." placeholder="Décrivez succinctement vos ambitions..." style="resize:none;" required></textarea>
                 </div>
-                <button type="submit" class="btn">Soumettre le dossier</button>
+                <button type="submit" class="btn" id="submitBtn" data-fr="Soumettre le dossier" data-en="Submit application">Soumettre le dossier</button>
             </form>
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" data-fr="© 2026 Rabnawaz Ghiasi — Tous droits réservés." data-en="© 2026 Rabnawaz Ghiasi — All rights reserved.">
         © 2026 Rabnawaz Ghiasi — Tous droits réservés.
     </footer>
+
+    <script>
+        const langBtn = document.getElementById('langBtn');
+        let lang = 'fr';
+
+        function setLang(l) {
+            lang = l;
+            langBtn.textContent = lang === 'fr' ? 'EN' : 'FR';
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = el.getAttribute('data-' + lang);
+                } else {
+                    el.innerHTML = el.getAttribute('data-' + lang);
+                }
+            });
+        }
+        langBtn.addEventListener('click', () => setLang(lang === 'fr' ? 'en' : 'fr'));
+    </script>
 
 </body>
 </html>
