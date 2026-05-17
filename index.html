@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rabnawaz Ghiasi — Agence de développement personnel, entrepreneuriat et immobilier de prestige à Strasbourg.">
-    <title>Rabnawaz Ghiasi — Agence Premium</title>
+    <meta name="description" content="Rabnawaz Ghiasi — Développement personnel, entrepreneuriat et investissement immobilier de prestige.">
+    <title>Rabnawaz Ghiasi — Agence</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-main: #f8f9fa;
-            --bg-card: #ffffff;
-            --text-main: #0a0a0c;
-            --text-muted: #6c757d;
-            --text-ultra-muted: #adb5bd;
-            --accent: #000000;
-            --border: rgba(0, 0, 0, 0.06);
-            --border-futur: rgba(0, 0, 0, 0.15);
-            --font-serif: 'Space Grotesk', sans-serif;
-            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --bg-dark: #0b0c10;
+            --bg-card: #1f2833;
+            --primary: #c5a880; /* Or subtil */
+            --text-light: #ffffff;
+            --text-muted: #c5a880;
+            --text-p: #a8b2c1;
         }
 
         * {
@@ -30,36 +26,13 @@
 
         html {
             scroll-behavior: smooth;
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            font-family: var(--font-sans);
-            overflow-x: hidden;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
         }
 
-        body {
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: 
-                linear-gradient(var(--border) 1px, transparent 1px),
-                linear-gradient(90deg, var(--border) 1px, transparent 1px);
-            background-size: 100px 100px;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.5;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
+        /* Menu de Navigation */
         .nav {
             position: fixed;
             top: 0;
@@ -69,17 +42,24 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1.5rem 2rem;
-            backdrop-filter: blur(20px);
-            background: rgba(248, 249, 250, 0.8);
-            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 2rem;
+            background: rgba(11, 12, 16, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
         }
 
         .nav-logo {
-            font-family: var(--font-serif);
+            font-family: 'Cinzel', serif;
             font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: -0.5px;
+            font-size: 1.3rem;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         .nav-links {
@@ -89,208 +69,223 @@
         }
 
         .nav-links a {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            color: var(--text-muted);
+            letter-spacing: 1px;
+            font-weight: 500;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--text-main);
+            color: var(--primary);
         }
 
         .lang-btn {
-            font-size: 0.7rem;
-            font-weight: 700;
+            font-size: 0.75rem;
+            font-weight: 600;
             letter-spacing: 1px;
             background: transparent;
-            border: 1px solid var(--border-futur);
+            border: 1px solid var(--primary);
+            color: var(--primary);
             padding: 0.4rem 0.8rem;
             cursor: pointer;
-            font-family: var(--font-sans);
-            transition: all 0.2s ease;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
         }
 
         .lang-btn:hover {
-            background: var(--accent);
-            color: #ffffff;
-            border-color: var(--accent);
+            background: var(--primary);
+            color: var(--bg-dark);
         }
 
+        /* Section Hero */
         .hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+            text-align: center;
             padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            background: radial-gradient(circle at center, #1f2833 0%, #0b0c10 100%);
+            padding-top: 80px;
         }
 
-        .hero-location {
-            font-size: 0.7rem;
-            letter-spacing: 3px;
+        .hero-subtitle {
+            font-size: 0.8rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
             font-weight: 600;
         }
 
         .hero h1 {
-            font-family: var(--font-serif);
-            font-size: clamp(2.8rem, 8vw, 6.5rem);
-            font-weight: 700;
-            line-height: 1.05;
-            letter-spacing: -2px;
-            color: var(--text-main);
-            margin-bottom: 2.5rem;
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            color: var(--text-light);
         }
 
         .hero h1 span {
+            color: var(--primary);
             display: block;
-            color: var(--text-main);
+            font-weight: 700;
         }
 
         .hero-tagline {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            font-weight: 300;
-            color: var(--text-muted);
-            max-width: 700px;
-            line-height: 1.7;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-p);
+            max-width: 800px;
             margin-bottom: 3rem;
+            font-weight: 300;
         }
 
+        /* Boutons */
         .btn {
             display: inline-flex;
             align-items: center;
-            padding: 1rem 2rem;
-            background: var(--accent);
-            color: #ffffff;
-            font-size: 0.8rem;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: var(--bg-dark);
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 600;
-            border: 1px solid var(--accent);
+            border: 1px solid var(--primary);
             cursor: pointer;
-            width: fit-content;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .btn:hover {
             background: transparent;
-            color: var(--accent);
+            color: var(--primary);
         }
 
+        /* Sections Générales */
         .section {
-            padding: 8rem 2rem;
-            max-width: 1200px;
+            padding: 6rem 2rem;
+            max-width: 1100px;
             margin: 0 auto;
-            border-top: 1px solid var(--border-futur);
         }
 
         .section-num {
-            font-family: var(--font-serif);
-            font-size: 0.8rem;
-            color: var(--text-muted);
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--primary);
             display: block;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .section-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 4rem;
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+            padding-bottom: 1rem;
         }
 
+        .manifeste-text {
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: var(--text-p);
+            line-height: 1.8;
+        }
+
+        /* Grille d'expertises */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2px;
-            background: var(--border-futur);
-            border: 1px solid var(--border-futur);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
 
         .card {
             background: var(--bg-card);
-            padding: 3rem 2rem;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(197, 168, 128, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .card:hover {
-            background: #f1f3f5;
+            transform: translateY(-5px);
+            border-color: var(--primary);
         }
 
         .card-num {
-            font-family: var(--font-serif);
-            font-size: 0.75rem;
-            color: var(--text-ultra-muted);
-            margin-bottom: 2rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
             display: block;
         }
 
         .card-title {
-            font-family: var(--font-serif);
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
             margin-bottom: 1rem;
-            letter-spacing: -0.5px;
+            color: var(--text-light);
         }
 
         .card-p {
-            color: var(--text-muted);
+            color: var(--text-p);
             font-size: 0.9rem;
-            line-height: 1.6;
+            ol-height: 1.6;
         }
 
+        /* Formulaire de Contact */
         .form-group {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .form-label {
             display: block;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
             font-weight: 600;
         }
 
         .form-input {
             width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid var(--border-futur);
-            padding: 0.75rem 0;
-            color: var(--text-main);
-            font-family: var(--font-sans);
-            font-size: 1rem;
+            background: rgba(31, 40, 51, 0.5);
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            padding: 0.8rem 1rem;
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
             transition: border-color 0.3s;
         }
 
         .form-input:focus {
             outline: none;
-            border-color: var(--accent);
+            border-color: var(--primary);
         }
 
+        /* Pied de page */
         .footer {
             padding: 4rem 2rem;
             text-align: center;
-            font-size: 0.75rem;
-            color: var(--text-ultra-muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--text-p);
+            border-top: 1px solid rgba(197, 168, 128, 0.1);
+            background: #060709;
         }
 
         @media (max-width: 768px) {
-            .nav { padding: 1rem; }
             .nav-links { display: none; }
-            .hero { padding: 1rem; }
-            .section { padding: 5rem 1rem; }
-            .card { padding: 2rem 1.5rem; }
+            .hero { padding: 1rem; padding-top: 100px; }
+            .section { padding: 4rem 1.5rem; }
         }
     </style>
 </head>
@@ -298,19 +293,19 @@
 
     <nav class="nav">
         <div class="nav-logo">R.GHIASI</div>
-        <ul class="nav-links">
-            <li><a href="#about" data-fr="01 / Agence" data-en="01 / Agency">01 / Agence</a></li>
-            <li><a href="#expertise" data-fr="02 / Écosystème" data-en="02 / Ecosystem">02 / Écosystème</a></li>
-            <li><a href="#contact" data-fr="03 / Contact" data-en="03 / Contact">03 / Contact</a></li>
-        </ul>
-        <button class="lang-btn" id="langBtn">EN</button>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#about" data-fr="01 / Agence" data-en="01 / Agency">01 / Agence</a></li>
+                <li><a href="#expertise" data-fr="02 / Écosystème" data-en="02 / Ecosystem">02 / Écosystème</a></li>
+                <li><a href="#contact" data-fr="03 / Contact" data-en="03 / Contact">03 / Contact</a></li>
+            </ul>
+            <button class="lang-btn" id="langBtn">EN</button>
+        </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-location" data-fr="STRASBOURG, FRANCE // HAUTE EXIGENCE" data-en="STRASBOURG, FRANCE // HIGH STANDARDS">STRASBOURG, FRANCE // HAUTE EXIGENCE</div>
-        
-        <h1>Rabnawaz<span>Ghiasi</span></h1>
-        
+        <div class="hero-subtitle" data-fr="STRASBOURG, FRANCE // HAUTE EXIGENCE" data-en="STRASBOURG, FRANCE // HIGH STANDARDS">STRASBOURG, FRANCE // HAUTE EXIGENCE</div>
+        <h1>Rabnawaz <span>Ghiasi</span></h1>
         <p class="hero-tagline" data-fr="Architecte de projets et de trajectoires. Nous concevons des écosystèmes solides, ancrés sur la clarté mentale, l'entrepreneuriat de pointe et l'acquisition d'actifs immobiliers durables." data-en="Architect of projects and trajectories. We design robust ecosystems, rooted in mental clarity, cutting-edge entrepreneurship, and the acquisition of sustainable real estate assets.">Architecte de projets et de trajectoires. Nous concevons des écosystèmes solides, ancrés sur la clarté mentale, l'entrepreneuriat de pointe et l'acquisition d'actifs immobiliers durables.</p>
         <a href="#contact" class="btn" data-fr="Initier un projet" data-en="Initiate a project">Initier un projet</a>
     </header>
@@ -318,15 +313,15 @@
     <main>
         <section class="section" id="about">
             <span class="section-num" data-fr="01 // LE MANIFESTE" data-en="01 // THE MANIFESTO">01 // LE MANIFESTE</span>
-            <h2 class="section-title" data-fr="Bâtir avec conscience.<br>Exécuter avec précision." data-en="Build with awareness.<br>Execute with precision.">Bâtir avec conscience.<br>Exécuter avec précision.</h2>
-            <p style="font-size: 1.25rem; font-weight: 300; max-width: 800px; color: var(--text-muted); line-height: 1.8;" data-fr="La dispersion est l'erreur des amateurs. Nous croyons en une approche chirurgicale : maîtriser les fondations intérieures d'un homme avant d'y injecter des stratégies d'affaires ou des investissements d'envergure. Une vision claire ne s'emprunte pas, elle se construit." data-en="Scattering is the amateur's mistake. We believe in a surgical approach: mastering a person's inner foundations before injecting business strategies or large-scale investments. A clear vision cannot be borrowed, it must be built.">
+            <h2 class="section-title" data-fr="Bâtir avec conscience. Exécuter avec précision." data-en="Build with awareness. Execute with precision.">Bâtir avec conscience. Exécuter avec précision.</h2>
+            <p class="manifeste-text" data-fr="La dispersion est l'erreur des amateurs. Nous croyons en une approche chirurgicale : maîtriser les fondations intérieures d'un homme avant d'y injecter des stratégies d'affaires ou des investissements d'envergure. Une vision claire ne s'emprunte pas, elle se construit." data-en="Scattering is the amateur's mistake. We believe in a surgical approach: mastering a person's inner foundations before injecting business strategies or large-scale investments. A clear vision cannot be borrowed, it must be built.">
                 La dispersion est l'erreur des amateurs. Nous croyons en une approche chirurgicale : maîtriser les fondations intérieures d'un homme avant d'y injecter des stratégies d'affaires ou des investissements d'envergure. Une vision claire ne s'emprunte pas, elle se construit.
             </p>
         </section>
 
         <section class="section" id="expertise">
-            <span class="section-num" data-fr="02 // PÔLES D'EXPERTISE" data-en="02 // AREAS OF EXPERTISE">02 // PÔLES D'EXPERTISE</span>
-            <h2 class="section-title" data-fr="Quatre piliers,<br>une seule synergie." data-en="Four pillars,<br>one single synergy.">Quatre piliers,<br>une seule synergie.</h2>
+            <span class="section-num" data-fr="02 // PÔLES D'EXPERTISE" data-en="02 // AREAS OF EXPERTISE">02 // PÔLES d'EXPERTISE</span>
+            <h2 class="section-title" data-fr="Quatre piliers, une seule synergie." data-en="Four pillars, one single synergy.">Quatre piliers, une seule synergie.</h2>
             
             <div class="grid">
                 <div class="card">
