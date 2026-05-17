@@ -378,21 +378,19 @@
     </footer>
 
     <script>
-        const langBtn = document.getElementById('langBtn');
-        let lang = 'fr';
-
-        function setLang(l) {
-            lang = l;
-            langBtn.textContent = lang === 'fr' ? 'EN' : 'FR';
-            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-                if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                    el.placeholder = el.getAttribute('data-' + lang);
-                } else {
-                    el.innerHTML = el.getAttribute('data-' + lang);
-                }
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetLang = btn.getAttribute('data-lang');
+               
+                document.querySelectorAll(`[data-${targetLang}]`).forEach(el => {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = el.getAttribute(`data-${targetLang}`);
+                    } else {
+                        el.innerHTML = el.getAttribute(`data-${targetLang}`);
+                    }
+                });
             });
-        }
-        langBtn.addEventListener('click', () => setLang(lang === 'fr' ? 'en' : 'fr'));
+        });
     </script>
 
 </body>
