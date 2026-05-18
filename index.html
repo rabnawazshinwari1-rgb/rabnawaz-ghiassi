@@ -1,317 +1,216 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R. GHIASI</title>
-  <style>
-    :root {
-      --bg-color: #0b132b;
-      --card-bg: #1c2541;
-      --text-color: #ffffff;
-      --accent-color: #48cae4;
-      --text-muted: #8d99ae;
-    }
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="aZ6wKwLm68Fh9npX5PZDRZupQRA5myl6sqjAcnoRsoE" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rabnawaz Shinwari — Entrepreneur, créateur de contenu et public speaker. Strasbourg, France.">
+<title>Rabnawaz Shinwari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#08111f;--ink2:#0c1a2e;--ink3:#101f36;--ink4:#152540;
+  --gold:#b8935a;--gold2:#d4a96a;--gold3:#e8c48a;
+  --gold-light:rgba(184,147,90,0.08);--gold-glow:rgba(184,147,90,0.15);
+  --cream:#f2ead8;--cream2:#e0d4b8;
+  --text:#c8bca0;--text2:#907c60;--text3:#504030;
+  --line:rgba(184,147,90,0.16);--line2:rgba(240,230,200,0.06);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;background:var(--ink);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+::-webkit-scrollbar{width:2px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--gold)}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* ═══ NAV ═══ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:999;height:60px;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:0 1.25rem;
+  background:rgba(8,17,31,0.93);
+  backdrop-filter:blur(24px);border-bottom:1px solid var(--line);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:1rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--cream);flex-shrink:0;display:flex;align-items:center;gap:0.5rem;
+}
+.nav-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold-glow);flex-shrink:0}
+.nav-links{display:flex;list-style:none}
+.nav-links a{
+  font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--text2);padding:0.4rem 0.55rem;transition:color 0.2s;white-space:nowrap;
+}
+.nav-links a:hover{color:var(--gold2)}
+.nav-langs{display:flex;gap:2px;flex-shrink:0}
+.nlang{
+  font-family:'Cormorant Garamond',serif;font-size:0.7rem;letter-spacing:0.1em;
+  color:var(--text2);padding:0.22rem 0.5rem;border:1px solid transparent;transition:all 0.2s;
+}
+.nlang.on{color:var(--gold);border-color:var(--line)}
+.nlang:hover{color:var(--gold2)}
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Cinzel', 'Didot', 'Playfair Display', serif;
-      line-height: 1.6;
-      padding: 20px;
-    }
+/* ═══ HERO ═══ */
+.hero{
+  min-height:100svh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:70px 1.25rem 3rem;position:relative;overflow:hidden;
+}
+.hero-atm{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 100% 60% at 50% -5%,rgba(21,37,64,0.9) 0%,transparent 55%),
+    radial-gradient(ellipse 70% 50% at 10% 90%,rgba(12,26,46,0.6) 0%,transparent 50%),
+    radial-gradient(ellipse 50% 40% at 90% 60%,rgba(184,147,90,0.04) 0%,transparent 50%);
+}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line2) 1px,transparent 1px),linear-gradient(90deg,var(--line2) 1px,transparent 1px);
+  background-size:70px 70px;
+  mask-image:radial-gradient(ellipse 90% 80% at 50% 50%,black 0%,transparent 72%);
+}
+.hero-inner{position:relative;z-index:1;max-width:860px;width:100%}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      max-width: 1200px;
-      margin: 0 auto 40px auto;
-    }
+.hero-badge{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:2rem;
+  opacity:0;animation:up 0.8s 0.1s ease forwards;
+}
+.hero-badge-line{width:1.75rem;height:1px;background:currentColor;opacity:0.5}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+.hero-h1{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:clamp(2.47rem, 8.45vw, 6.82rem);
+  line-height:0.86;letter-spacing:0.05em;text-transform:uppercase;
+  opacity:0;animation:up 1s 0.22s ease forwards;
+}
+.h1-first{display:block;color:var(--cream)}
+.h1-last{
+  display:block;color:transparent;
+  -webkit-text-stroke:1.5px var(--gold2);
+  letter-spacing:0.09em;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
+.hero-sep{
+  display:flex;align-items:center;justify-content:center;gap:0.9rem;
+  margin:1.75rem auto;
+  opacity:0;animation:fade 0.8s 0.42s ease forwards;
+}
+.hsep-l{width:2.5rem;height:1px;background:linear-gradient(to right,transparent,var(--gold))}
+.hsep-l.r{background:linear-gradient(to left,transparent,var(--gold))}
+.hsep-d{width:5px;height:5px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 10px var(--gold-glow)}
 
-    .nav-links a, .lang-btn {
-      color: var(--text-color);
-      text-decoration: none;
-      font-size: 14px;
-      letter-spacing: 1px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      opacity: 0.7;
-      transition: opacity 0.3s;
-    }
+.hero-tagline{
+  font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;
+  font-size:clamp(1rem,3.5vw,1.45rem);line-height:1.7;
+  color:var(--text);max-width:580px;margin:0 auto;
+  opacity:0;animation:up 0.9s 0.5s ease forwards;
+}
+.hero-tagline strong{color:var(--cream2);font-style:normal;font-weight:400}
 
-    .nav-links a:hover, .lang-btn:hover, .lang-btn.active {
-      opacity: 1;
-      color: var(--accent-color);
-    }
+.hero-roles{
+  display:flex;align-items:center;justify-content:center;gap:0.75rem;
+  margin-top:1.5rem;flex-wrap:wrap;
+  opacity:0;animation:up 0.8s 0.58s ease forwards;
+}
+.role-pill{
+  font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;
+  border:1px solid var(--line);padding:0.3rem 0.8rem;color:var(--gold);
+  background:var(--gold-light);
+}
+.role-sep{color:var(--text3);font-size:0.6rem}
 
-    .lang-switcher {
-      display: flex;
-      gap: 10px;
-    }
+.hero-cta{
+  display:flex;align-items:center;justify-content:center;
+  gap:0.85rem;margin-top:2.25rem;flex-wrap:wrap;
+  opacity:0;animation:up 0.9s 0.66s ease forwards;
+}
+.btn-g{
+  font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:400;
+  padding:0.85rem 2rem;background:var(--gold);color:var(--ink);
+  border:1px solid var(--gold);transition:all 0.25s;display:inline-block;
+}
+.btn-g:hover{background:var(--gold2);border-color:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 36px var(--gold-glow)}
+.btn-o{
+  font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:400;
+  padding:0.85rem 2rem;background:transparent;color:var(--cream);
+  border:1px solid var(--line2);transition:all 0.25s;display:inline-block;
+}
+.btn-o:hover{border-color:var(--line);color:var(--gold2)}
 
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.hero-stats{
+  display:inline-flex;border:1px solid var(--line);margin-top:2.75rem;
+  opacity:0;animation:up 0.9s 0.78s ease forwards;
+}
+.hstat{padding:0.8rem 1.25rem;text-align:center;border-right:1px solid var(--line)}
+.hstat:last-child{border-right:none}
+.hstat-n{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.5rem;color:var(--gold2);display:block;line-height:1}
+.hstat-l{font-size:0.46rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text2);display:block;margin-top:0.35rem}
 
-    .section {
-      margin-bottom: 80px;
-    }
+.hero-scroll{
+  position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  opacity:0;animation:fade 1s 1.5s ease forwards;
+}
+.hscroll-bar{width:1px;height:2.5rem;background:linear-gradient(to bottom,var(--gold),transparent);animation:pulse 2s infinite}
+.hscroll-txt{font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--text3)}
+@keyframes pulse{0%,100%{opacity:0.35}50%{opacity:1}}
 
-    .section-num {
-      display: block;
-      font-size: 12px;
-      color: var(--accent-color);
-      letter-spacing: 3px;
-      margin-bottom: 10px;
-    }
+/* ═══ SHARED ═══ */
+.sep{height:1px;background:linear-gradient(to right,transparent,var(--line) 15%,var(--line) 85%,transparent);margin:0 1.25rem}
+.sec{padding:5rem 1.25rem}
+.eyebrow{
+  display:flex;align-items:center;gap:0.7rem;
+  font-size:0.5rem;letter-spacing:0.34em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:1.2rem;
+}
+.eyebrow::before{content:'';width:1.25rem;height:1px;background:var(--gold);opacity:0.55}
+.sh2{
+  font-family:'Cormorant Garamond',serif;font-weight:400;
+  font-size:clamp(1.7rem,5vw,3rem);line-height:1.2;color:var(--cream);margin-bottom:1.4rem;
+}
+.sh2 em{color:var(--gold2);font-style:italic}
 
-    .section-title {
-      font-size: 36px;
-      margin-bottom: 30px;
-      letter-spacing: 1px;
-      font-weight: 400;
-    }
+/* ═══ STORY ═══ */
+.story-body{
+  font-size:clamp(0.87rem,2vw,0.95rem);line-height:2.1;
+  color:var(--text);margin-bottom:1.4rem;font-weight:300;
+}
+.story-body strong{color:var(--cream2);font-weight:400}
+.pull{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(1.05rem,3vw,1.4rem);line-height:1.65;
+  color:var(--gold2);border-left:1px solid var(--gold);
+  padding-left:1.25rem;margin:2rem 0;
+}
+.stags{display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:1.4rem}
+.stag{
+  font-size:0.5rem;letter-spacing:0.16em;text-transform:uppercase;
+  border:1px solid var(--line);padding:0.28rem 0.7rem;color:var(--gold);
+}
 
-    .manifeste-text {
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 800px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      padding: 40px 30px;
-      border-radius: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: transform 0.3s, border-color 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent-color);
-    }
-
-    .card-num {
-      display: block;
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    .card-title {
-      font-size: 20px;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-      font-weight: 400;
-    }
-
-    .card-p {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .form-group {
-      margin-bottom: 25px;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-      color: var(--text-muted);
-    }
-
-    .form-input, .form-textarea {
-      width: 100%;
-      padding: 15px;
-      background-color: var(--card-bg);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--text-color);
-      font-family: inherit;
-      font-size: 14px;
-      border-radius: 4px;
-      transition: border-color 0.3s;
-    }
-
-    .form-input:focus, .form-textarea:focus {
-      outline: none;
-      border-color: var(--accent-color);
-    }
-
-    .form-textarea {
-      height: 150px;
-      resize: vertical;
-    }
-
-    .submit-btn {
-      background-color: transparent;
-      color: var(--text-color);
-      border: 1px solid var(--text-color);
-      padding: 15px 40px;
-      font-family: inherit;
-      font-size: 12px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: all 0.3s;
-      width: 100%;
-      border-radius: 4px;
-    }
-
-    .submit-btn:hover {
-      background-color: var(--text-color);
-      color: var(--bg-color);
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="logo">R. GHIASI</div>
-    <div class="nav-links">
-      <a href="#about" data-fr="AGENCE" data-en="AGENCY" data-de="AGENTUR" data-it="AGENZIA">AGENCY</a>
-      <a href="#expertise" data-fr="ÉCOSYSTÈME" data-en="ECOSYSTEM" data-de="ÖKOSYSTEM" data-it="ECOSISTEMA">ECOSYSTEM</a>
-      <a href="#contact" data-fr="INITIER UN PROJET" data-en="INITIATE A PROJECT" data-de="PROJEKT STARTEN" data-it="INIZIARE UN PROGETTO">INITIATE A PROJECT</a>
-    </div>
-    <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="fr">FR</button>
-      <button class="lang-btn" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="de">DE</button>
-      <button class="lang-btn" data-lang="it">IT</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="section" id="about">
-      <span class="section-num" data-fr="01 // LE MANIFESTE" data-en="01 // THE MANIFESTO" data-de="01 // DAS MANIFEST" data-it="01 // IL MANIFESTO">01 // THE MANIFESTO</span>
-      <h2 class="section-title" data-fr="Bâtir avec conscience. Exécuter avec rigueur." data-en="Build with awareness. Execute with rigor." data-de="Mit Bewusstsein bauen. Mit Strenge ausführen." data-it="Costruire con consapevolezza. Eseguire con rigore.">Build with awareness. Execute with rigor.</h2>
-      <p class="manifeste-text" data-fr="La dispersion est l'erreur des amateurs. Nous croyons en une approche d'ingénierie globale où l'esprit, le business, le patrimoine et la parole s'alignent pour créer une puissance d'impact unique." data-en="Dispersion is the amateur's mistake. We believe in a global engineering approach where mind, business, assets, and speech align to create a unique power of impact." data-de="Zerstreuung ist der Fehler von Amateuren. Wir glauben an einen globalen Engineering-Ansatz, bei dem Geist, Geschäft, Vermögen und Sprache aufeinander abgestimmt sind, um eine einzigartige Wirkung zu erzielen." data-it="La dispersione è l'errore dei dilettanti. Crediamo in un approccio ingegneristico globale in cui mente, business, patrimonio e parole si allineano per créer un potere d'impatto unique.">Dispersion is the amateur's mistake. We believe in a global engineering approach where mind, business, assets, and speech align to create a unique power of impact.</p>
-    </section>
-
-    <section class="section" id="expertise">
-      <span class="section-num" data-fr="02 // PÔLES D'EXPERTISE" data-en="02 // AREAS OF EXPERTISE" data-de="02 // EXPERTENBEREICHE" data-it="02 // AREE DI COMPETENZA">02 // AREAS OF EXPERTISE</span>
-      <h2 class="section-title" data-fr="Quatre piliers, une seule synergie." data-en="Four pillars, one single synergy." data-de="Vier Säulen, eine einzige Synergie." data-it="Quattro pilastri, una sola sinergia.">Four pillars, one single synergy.</h2>
-      
-      <div class="grid">
-        <div class="card">
-          <span class="card-num">// 01</span>
-          <h3 class="card-title" data-fr="Ingénierie Mentale" data-en="Mental Engineering" data-de="Mentale Führung" data-it="Ingegneria Mentale">Mental Engineering</h3>
-          <p class="card-p" data-fr="Discipline supérieure, clarté décisionnelle et structure psychologique. Forger le leader avant le projet." data-en="Superior discipline, decisional clarity, and psychological structure. Forging the leader before the project." data-de="Überlegene Disziplin, Entscheidungsstrukturen und psychologische Stärke. Den Leader vor dem Projekt formen." data-it="Disciplina superiore, chiarezza decisionale e struttura psicologica. Plasmare il leader prima del progetto.">Superior discipline, decisional clarity, and psychological structure. Forging the leader before the project.</p>
-        </div>
-        
-        <div class="card">
-          <span class="card-num">// 02</span>
-          <h3 class="card-title" data-fr="Systèmes d'Entreprise" data-en="Business Systems" data-de="Unternehmenssysteme" data-it="Sistemi Aziendali">Business Systems</h3>
-          <p class="card-p" data-fr="Création et structuration de projets d'entreprise robustes, étape par étape, loin des spéculations éphémères." data-en="Creation and structuring of robust business projects, step by step, far from short-lived speculation." data-de="Schritt-für-Schritt-Aufbau solider Unternehmensprojekte, fernab von kurzlebigen Spekulationen." data-it="Creazione e strutturazione di progetti aziendali robusti, passo dopo passo, lontani da speculazioni effimere.">Creation and structuring of robust business projects, step by step, far from short-lived speculation.</p>
-        </div>
-        
-        <div class="card">
-          <span class="card-num">// 03</span>
-          <h3 class="card-title" data-fr="Actifs Immobiliers" data-en="Real Estate Assets" data-de="Immobilienanlagen" data-it="Attività Immobiliari">Real Estate Assets</h3>
-          <p class="card-p" data-fr="Transformer les ressources financières en patrimoine tangible et prestigieux. Construire pour durer à travers les générations." data-en="Transforming financial resources into tangible and prestigious wealth. Building to last across generations." data-de="Finanzielle Ressourcen in greifbares und prestigeträchtiges Vermögen verwandeln. Generationenüberdauernd bauen." data-it="Trasformare le risorse finanziarie in un patrimonio tangibile e prestigioso. Costruire per durare attraverso le generazioni.">Transforming financial resources into tangible and prestigious wealth. Building to last across generations.</p>
-        </div>
-        
-        <div class="card">
-          <span class="card-num">// 04</span>
-          <h3 class="card-title" data-fr="Médias & Influence" data-en="Media & Influence" data-de="Medien & Einfluss" data-it="Media & Influenza">Media & Influence</h3>
-          <p class="card-p" data-fr="Prise de parole publique internationale et multilingue. Diffuser des idées profondes auprès de communautés engagées." data-en="International multi-language public speaking. Broadcasting profound ideas to engaged communities." data-de="Internationale und mehrsprachige öffentliche Reden. Verbreitung tiefgründiger Ideen in engagierten Communities." data-it="Interventi pubblici internazionali e multilingue. Diffondere idee profonde a comunità impegnate.">International multi-language public speaking. Broadcasting profound ideas to engaged communities.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <span class="section-num" data-fr="03 // CONTACT" data-en="03 // CONTACT" data-de="03 // KONTAKT" data-it="03 // CONTATTO">03 // CONTACT</span>
-      <h2 class="section-title" data-fr="Contactez-nous." data-en="Get in touch." data-de="Kontaktieren Sie uns." data-it="Contattaci.">Get in touch.</h2>
-      
-      <form class="contact-form" action="https://formspree.io/f/mojbqyay" method="POST">
-        <div class="form-group">
-          <label class="form-label" data-fr="VOTRE NOM COMPLET" data-en="YOUR FULL NAME" data-de="IHR VOLLSTÄNDIGER NAME" data-it="IL TUO NOME COMPLETO">YOUR FULL NAME</label>
-          <input type="text" name="name" class="form-input" placeholder="Ex: John Doe" required>
-        </div>
-        
-        <div class="form-group">
-          <label class="form-label" data-fr="E-MAIL DE CONTACT" data-en="CONTACT EMAIL" data-de="KONTAKT-E-MAIL" data-it="EMAIL DI CONTATTO">CONTACT EMAIL</label>
-          <input type="email" name="_replyto" class="form-input" placeholder="Ex: nom@agence.com" required>
-        </div>
-        
-        <div class="form-group">
-          <label class="form-label" data-fr="NATURE DE VOTRE VISION" data-en="NATURE OF YOUR VISION" data-de="ART IHRER VISION" data-it="NATURA DELLA TUA VISIONE">NATURE OF YOUR VISION</label>
-          <textarea name="message" class="form-textarea" placeholder="Briefly describe your ambitions..." required></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn" data-fr="ENVOYER LA DEMANDE" data-en="SUBMIT APPLICATION" data-de="ANFRAGE SENDEN" data-it="INVIA RICHIESTA">SUBMIT APPLICATION</button>
-      </form>
-    </section>
-  </main>
-
-  <script>
-    const langButtons = document.querySelectorAll('.lang-btn');
-    
-    function changeLanguage(lang) {
-      document.querySelectorAll('[data-fr]').forEach(el => {
-        const text = el.getAttribute(`data-${lang}`);
-        if (text) {
-          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            el.setAttribute('placeholder', text);
-          } else {
-            el.innerHTML = text;
-          }
-        }
-      });
-      
-      langButtons.forEach(btn => {
-        if(btn.getAttribute('data-lang') === lang) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-      localStorage.setItem('selectedLang', lang);
-    }
-
-    langButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.getAttribute('data-lang');
-        changeLanguage(lang);
-      });
-    });
-
-    const savedLang = localStorage.getItem('selectedLang') || 'fr';
-    changeLanguage(savedLang);
-  </script>
-</body>
-</html>
+/* ═══ PILLARS ═══ */
+.pillars-grid{
+  display:grid;grid-template-columns:1fr;
+  border:1px solid var(--line);margin-top:1.75rem;
+}
+.pillar-card{
+  padding:1.75rem 1.25rem;border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;transition:background 0.3s;
+}
+.pillar-card:last-child{border-bottom:none}
+.pillar-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:1.5px;
+  background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform 0.45s ease;
+}
+.pillar-card:hover::before{transform:scaleY(1)}
+.pillar-card:hover{background:rgba(184,147,90,0.025)}
+.pillar-top{display:flex;align-items:baseline;gap:0.85rem;margin-bottom:0.65rem}
+.pillar-idx{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.6rem;color:rgba(184,147,90,0.18);line-height:1;flex-shrink:0}
+.pillar-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.1rem;color:var(--cream);letter-spacing:0.02em}
+.pillar-desc{font-size:0
