@@ -1,341 +1,233 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rabnawaz Ghiasi — Développement personnel, entrepreneuriat et investissement immobilier de prestige.">
-    <title>Rabnawaz Ghiasi — Agence</title>
-    <meta name="google-site-verification" content="googled7dda0d07e0372ff" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R. GHIASI</title>
+  <style>
+    :root {
+      --bg-color: #0b132b;
+      --card-bg: #1c2541;
+      --text-color: #ffffff;
+      --accent-color: #48cae4;
+      --text-muted: #8d99ae;
+    }
 
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-dark: #0b0c10;
-            --bg-card: #1f2833;
-            --primary: #c5a880; /* Or subtil */
-            --text-light: #ffffff;
-            --text-muted: #c5a880;
-            --text-p: #a8b2c1;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Cinzel', 'Didot', 'Playfair Display', serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
 
-        html {
-            scroll-behavior: smooth;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      max-width: 1200px;
+      margin: 0 auto 40px auto;
+    }
 
-        /* Menu de Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.2rem 2rem;
-            background: rgba(11, 12, 16, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
-        }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
 
-        .nav-logo {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--primary);
-            letter-spacing: 2px;
-        }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
 
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
+    .nav-links a, .lang-btn {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+    .nav-links a:hover, .lang-btn:hover, .lang-btn.active {
+      opacity: 1;
+      color: var(--accent-color);
+    }
 
-        .nav-links a {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+    .lang-switcher {
+      display: flex;
+      gap: 10px;
+    }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .lang-btn {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 0.4rem 0.8rem;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            transition: all 0.3s ease;
-        }
+    .section {
+      margin-bottom: 80px;
+    }
 
-        .lang-btn:hover {
-            background: var(--primary);
-            color: var(--bg-dark);
-        }
+    .section-num {
+      display: block;
+      font-size: 12px;
+      color: var(--accent-color);
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
 
-        /* Section Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            background: radial-gradient(circle at center, #1f2833 0%, #0b0c10 100%);
-            padding-top: 80px;
-        }
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
 
-        .hero-subtitle {
-            font-size: 0.8rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
+    .manifeste-text {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 800px;
+    }
 
-        .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 400;
-            line-height: 1.2;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            color: var(--text-light);
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
 
-        .hero h1 span {
-            color: var(--primary);
-            display: block;
-            font-weight: 700;
-        }
+    .card {
+      background-color: var(--card-bg);
+      padding: 40px 30px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s, border-color 0.3s;
+    }
 
-        .hero-tagline {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--text-p);
-            max-width: 800px;
-            margin-bottom: 3rem;
-            font-weight: 300;
-        }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
+    }
 
-        /* Boutons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 1rem 2.5rem;
-            background: var(--primary);
-            color: var(--bg-dark);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            border: 1px solid var(--primary);
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+    .card-num {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
 
-        .btn:hover {
-            background: transparent;
-            color: var(--primary);
-        }
+    .card-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
 
-        /* Sections Générales */
-        .section {
-            padding: 6rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+    .card-p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
 
-        .section-num {
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
+    /* FORMULAIRE DE CONTACT STYLÉ ET STANDARD */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 3rem;
-            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
-            padding-bottom: 1rem;
-        }
+    .form-group {
+      margin-bottom: 25px;
+    }
 
-        .manifeste-text {
-            font-size: 1.15rem;
-            font-weight: 300;
-            color: var(--text-p);
-            line-height: 1.8;
-        }
+    .form-label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
 
-        /* Grille d'expertises */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 15px;
+      background-color: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-color);
+      font-family: inherit;
+      font-size: 14px;
+      border-radius: 4px;
+      transition: border-color 0.3s;
+    }
 
-        .card {
-            background: var(--bg-card);
-            padding: 2.5rem 2rem;
-            border: 1px solid rgba(197, 168, 128, 0.1);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
+    .form-textarea {
+      height: 150px;
+      resize: vertical;
+    }
 
-        .card-num {
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            display: block;
-        }
+    .submit-btn {
+      background-color: transparent;
+      color: var(--text-color);
+      border: 1px solid var(--text-color);
+      padding: 15px 40px;
+      font-family: inherit;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      width: 100%;
+      border-radius: 4px;
+    }
 
-        .card-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        .card-p {
-            color: var(--text-p);
-            font-size: 0.9rem;
-            ol-height: 1.6;
-        }
-
-        /* Formulaire de Contact */
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-input {
-            width: 100%;
-            background: rgba(31, 40, 51, 0.5);
-            border: 1px solid rgba(197, 168, 128, 0.2);
-            padding: 0.8rem 1rem;
-            color: var(--text-light);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        /* Pied de page */
-        .footer {
-            padding: 4rem 2rem;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-p);
-            border-top: 1px solid rgba(197, 168, 128, 0.1);
-            background: #060709;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero { padding: 1rem; padding-top: 100px; }
-            .section { padding: 4rem 1.5rem; }
-        }
-    </style>
+    .submit-btn:hover {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+    }
+  </style>
 </head>
 <body>
 
-    <nav class="nav">
-        <div class="nav-logo">R.GHIASI</div>
-        <div class="nav-right">
-            <ul class="nav-links">
-<li><a href="#about" data-fr="01 / Agence" data-en="01 / Agency" data-it="01 / Agenzia" data-de="01 / Agentur">01 / Agence</a></li>
-                <li><a href="#expertise" data-fr="02 / Écosystème" data-en="02 / Ecosystem" data-it="02 / Ecosistema" data-de="02 / Ökosystem">02 / Écosystème</a></li>
-                <li><a href="#contact" data-fr="03 / Contact" data-en="03 / Contact" data-it="03 / Contatto" data-de="03 / Kontakt">03 / Contact</a></li>
-            </ul>
-<button class="lang-btn" data-lang="fr">FR</button>
-<button class="lang-btn" data-lang="en">EN</button>
-<button class="lang-btn" data-lang="it">IT</button>
-<button class="lang-btn" data-lang="de">DE</button>        </div>
-    </nav>
+  <header>
+    <div class="logo">R. GHIASI</div>
+    <div class="nav-links">
+      <a href="#about" data-fr="AGENCE" data-en="AGENCY" data-de="AGENTUR" data-it="AGENZIA">AGENCY</a>
+      <a href="#expertise" data-fr="ÉCOSYSTÈME" data-en="ECOSYSTEM" data-de="ÖKOSYSTEM" data-it="ECOSISTEMA">ECOSYSTEM</a>
+      <a href="#contact" data-fr="INITIER UN PROJET" data-en="INITIATE A PROJECT" data-de="PROJEKT STARTEN" data-it="INIZIARE UN PROGETTO">INITIATE A PROJECT</a>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="de">DE</button>
+      <button class="lang-btn" data-lang="it">IT</button>
+    </div>
+  </header>
 
-    <header class="hero">
-        <div class="hero-subtitle" data-fr="STRASBOURG, FRANCE // HAUTE EXIGENCE" data-en="STRASBOURG, FRANCE // HIGH STANDARDS">STRASBOURG, FRANCE // HAUTE EXIGENCE</div>
-        <h1>Rabnawaz <span>Ghiasi</span></h1>
-             <p class="hero-tagline"
-               data-fr="Architecte de projets et de trajectoires. Nous concevons des écosystèmes solides, ancrés sur la clarté mentale, l'entrepreneuriat de pointe et l'acquisition d'actifs immobiliers durables."
-               data-en="Architect of projects and trajectories. We design robust ecosystems, rooted in mental clarity, cutting-edge entrepreneurship, and the acquisition of sustainable real estate assets."
-               data-it="Architetto di progetti e traiettorie. Progettiamo ecosistemi robusti, radicati nella chiarezza mentale, nell'imprenditorialità all'avanguardia e nell'acquisizione di attività immobiliari sostenibili."
-               data-de="Architekt von Projekten und Trajektorien. Wir entwerfen robuste Ökosysteme, die auf mentaler Klarheit, wegweisendem Unternehmertum und dem Erwerb nachhaltiger Immobilienwerte basieren.">Architecte de projets et de trajectoires. Nous concevons des écosystèmes solides, ancrés sur la clarté mentale, l'entrepreneuriat de pointe et l'acquisition d'actifs immobiliers durables.</p>
-            <a href="#contact" class="btn"
-               data-fr="Initier un projet"
-               data-en="Initiate a project"
-               data-it="Iniziare un progetto"
-               data-de="Ein Projekt starten">Initier un projet</a>
-    </header>
+  <main>
+    <section class="section" id="about">
+      <span class="section-num" data-fr="01 // LE MANIFESTE" data-en="01 // THE MANIFESTO" data-de="01 // DAS MANIFEST" data-it="01 // IL MANIFESTO">01 // THE MANIFESTO</span>
+      <h2 class="section-title" data-fr="Bâtir avec conscience. Exécuter avec rigueur." data-en="Build with awareness. Execute with rigor." data-de="Mit Bewusstsein bauen. Mit Strenge ausführen." data-it="Costruire con consapevolezza. Eseguire con rigore.">Build with awareness. Execute with rigor.</h2>
+      <p class="manifeste-text" data-fr="La dispersion est l'erreur des amateurs. Nous croyons en une approche d'ingénierie globale où l'esprit, le business, le patrimoine et la parole s'alignent pour créer une puissance d'impact unique." data-en="Dispersion is the amateur's mistake. We believe in a global engineering approach where mind, business, assets, and speech align to create a unique power of impact." data-de="Zerstreuung ist der Fehler von Amateuren. Wir glauben an einen globalen Engineering-Ansatz, bei dem Geist, Geschäft, Vermögen und Sprache aufeinander abgestimmt sind, um eine einzigartige Wirkung zu erzielen." data-it="La dispersione è l'errore dei dilettanti. Crediamo in un approccio ingegneristico globale in cui mente, business, patrimonio e parola si allineano per creare un potere d'impatto unico.">Dispersion is the amateur's mistake. We believe in a global engineering approach where mind, business, assets, and speech align to create a unique power of impact.</p>
+    </section>
 
-    <main>
-        <section class="section" id="about">
-            <span class="section-num" data-fr="01 // LE MANIFESTE" data-en="01 // THE MANIFESTO">01 // LE MANIFESTE</span>
-            <h2 class="section-title" data-fr="Bâtir avec conscience. Exécuter avec précision." data-en="Build with awareness. Execute with precision.">Bâtir avec conscience. Exécuter avec précision.</h2>
-            <p class="manifeste-text" data-fr="La dispersion est l'erreur des amateurs. Nous croyons en une approche chirurgicale : maîtriser les fondations intérieures d'un homme avant d'y injecter des stratégies d'affaires ou des investissements d'envergure. Une vision claire ne s'emprunte pas, elle se construit." data-en="Scattering is the amateur's mistake. We believe in a surgical approach: mastering a person's inner foundations before injecting business strategies or large-scale investments. A clear vision cannot be borrowed, it must be built.">
-                La dispersion est l'erreur des amateurs. Nous croyons en une approche chirurgicale : maîtriser les fondations intérieures d'un homme avant d'y injecter des stratégies d'affaires ou des investissements d'envergure. Une vision claire ne s'emprunte pas, elle se construit.
-            </p>
-        </section>
-
-        <section class="section" id="expertise">
-            <span class="section-num" data-fr="02 // PÔLES D'EXPERTISE" data-en="02 // AREAS OF EXPERTISE">02 // PÔLES d'EXPERTISE</span>
-<h2 class="section-title" data-fr="Quatre piliers, une seule synergie." data-en="Four pillars, one single synergy." data-de="Vier Säulen, eine einzige Synergie." data-it="Quattro pilastri, un'unica sinergia.">Quatre piliers, une seule synergie.</h2>
-            
-<div class="grid">
+    <section class="section" id="expertise">
+      <span class="section-num" data-fr="02 // PÔLES D'EXPERTISE" data-en="02 // AREAS OF EXPERTISE" data-de="02 // EXPERTENBEREICHE" data-it="02 // AREE DI COMPETENZA">02 // AREAS OF EXPERTISE</span>
+      <h2 class="section-title" data-fr="Quatre piliers, une seule synergie." data-en="Four pillars, one single synergy." data-de="Vier Säulen, eine einzige Synergie." data-it="Quattro pilastri, una sola sinergia.">Four pillars, one single synergy.</h2>
+      
+      <div class="grid">
         <div class="card">
           <span class="card-num">// 01</span>
           <h3 class="card-title" data-fr="Ingénierie Mentale" data-en="Mental Engineering" data-de="Mentale Führung" data-it="Ingegneria Mentale">Mental Engineering</h3>
@@ -419,6 +311,7 @@
       });
     });
 
+    // Charger la langue sauvegardée ou utiliser 'fr' par défaut
     const savedLang = localStorage.getItem('selectedLang') || 'fr';
     changeLanguage(savedLang);
   </script>
