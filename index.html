@@ -386,5 +386,41 @@
       </form>
     </section>
   </main>
+
+  <script>
+    const langButtons = document.querySelectorAll('.lang-btn');
+    
+    function changeLanguage(lang) {
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.setAttribute('placeholder', text);
+          } else {
+            el.innerHTML = text;
+          }
+        }
+      });
+      
+      langButtons.forEach(btn => {
+        if(btn.getAttribute('data-lang') === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      localStorage.setItem('selectedLang', lang);
+    }
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        changeLanguage(lang);
+      });
+    });
+
+    const savedLang = localStorage.getItem('selectedLang') || 'fr';
+    changeLanguage(savedLang);
+  </script>
 </body>
 </html>
