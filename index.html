@@ -2,10 +2,9 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="google-site-verification" content="aZ6wKwLm68Fh9npX5PZDRZupQRA5myl6sqjAcnoRsoE" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rabnawaz Shinwari — Entrepreneur, créateur de contenu et public speaker. Strasbourg, France.">
-<title>Rabnawaz Shinwari</title>
+<meta name="description" content="Rabnawaz Ghiasi — Entrepreneur, créateur de contenu et public speaker. Strasbourg, France.">
+<title>Rabnawaz Ghiasi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -26,44 +25,39 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 ::-webkit-scrollbar-track{background:var(--ink)}
 ::-webkit-scrollbar-thumb{background:var(--gold)}
 
-/* ═══ NAV OPTIMISÉE POUR MOBILE ═══ */
+/* ═══ NAV ═══ */
 .nav{
   position:fixed;inset:0 0 auto 0;z-index:999;height:60px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 0.75rem;
-  background:rgba(8,17,31,0.95);
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:0 1.25rem;
+  background:rgba(8,17,31,0.93);
   backdrop-filter:blur(24px);border-bottom:1px solid var(--line);
 }
 .nav-logo{
   font-family:'Cormorant Garamond',serif;font-weight:500;
-  font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--cream);flex-shrink:0;display:flex;align-items:center;gap:0.3rem;
+  font-size:1rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--cream);flex-shrink:0;display:flex;align-items:center;gap:0.5rem;
 }
-.nav-logo .full-name{display:none} /* Masqué sur mobile */
-.nav-logo .short-name{display:inline} /* Visible sur mobile */
-
 .nav-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold-glow);flex-shrink:0}
-.nav-links{display:flex;list-style:none;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0.25rem}
-.nav-links::-webkit-scrollbar{display:none} /* Cache la barre de défilement des liens sur mobile */
-
+.nav-links{display:flex;list-style:none}
 .nav-links a{
-  font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--text2);padding:0.4rem 0.4rem;transition:color 0.2s;white-space:nowrap;
+  font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--text2);padding:0.4rem 0.55rem;transition:color 0.2s;white-space:nowrap;
 }
 .nav-links a:hover{color:var(--gold2)}
-.nav-langs{display:flex;gap:1px;flex-shrink:0}
+.nav-langs{display:flex;gap:2px;flex-shrink:0}
 .nlang{
-  font-family:'Cormorant Garamond',serif;font-size:0.65rem;letter-spacing:0.05em;
-  color:var(--text2);padding:0.2rem 0.35rem;border:1px solid transparent;transition:all 0.2s;
+  font-family:'Cormorant Garamond',serif;font-size:0.7rem;letter-spacing:0.1em;
+  color:var(--text2);padding:0.22rem 0.5rem;border:1px solid transparent;transition:all 0.2s;
 }
-.nlang.on{color:var(--gold);border-color:var(--line);background:var(--gold-light)}
+.nlang.on{color:var(--gold);border-color:var(--line)}
 .nlang:hover{color:var(--gold2)}
 
 /* ═══ HERO ═══ */
 .hero{
   min-height:100svh;display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;
-  padding:70px 1.25rem 3rem;position:relative;overflow:hidden;
+  padding:80px 1.25rem 3rem;position:relative;overflow:hidden;
 }
 .hero-atm{
   position:absolute;inset:0;pointer-events:none;
@@ -78,93 +72,78 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   background-size:70px 70px;
   mask-image:radial-gradient(ellipse 90% 80% at 50% 50%,black 0%,transparent 72%);
 }
-.hero-inner{position:relative;z-index:1;max-width:860px;width:100%}
+.hero-inner{position:relative;z-index:1;max-width:940px;width:100%}
 
 .hero-badge{
   display:inline-flex;align-items:center;gap:0.6rem;
   font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);
-  margin-bottom:2rem;
+  margin-bottom:1.5rem;
   opacity:0;animation:up 0.8s 0.1s ease forwards;
 }
 .hero-badge-line{width:1.75rem;height:1px;background:currentColor;opacity:0.5}
 
 .hero-h1{
   font-family:'Cormorant Garamond',serif;font-weight:300;
-  font-size:clamp(3.8rem,13vw,10.5rem);
-  line-height:0.86;letter-spacing:0.05em;text-transform:uppercase;
+  font-size:clamp(2.8rem, 11vw, 8.5rem);
+  line-height:0.9;letter-spacing:0.04em;text-transform:uppercase;
   opacity:0;animation:up 1s 0.22s ease forwards;
+  margin-bottom: 1.5rem;
 }
 .h1-first{display:block;color:var(--cream)}
 .h1-last{
   display:block;color:transparent;
-  -webkit-text-stroke:1.5px var(--gold2);
-  letter-spacing:0.09em;
+  -webkit-text-stroke:1px var(--gold2);
+  letter-spacing:0.06em;
 }
 
-.hero-sep{
-  display:flex;align-items:center;justify-content:center;gap:0.9rem;
-  margin:1.75rem auto;
-  opacity:0;animation:fade 0.8s 0.42s ease forwards;
+@media(min-width:768px){
+  .hero-h1{-webkit-text-stroke:1.5px var(--gold2);}
 }
-.hsep-l{width:2.5rem;height:1px;background:linear-gradient(to right,transparent,var(--gold))}
-.hsep-l.r{background:linear-gradient(to left,transparent,var(--gold))}
-.hsep-d{width:5px;height:5px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 10px var(--gold-glow)}
 
 .hero-tagline{
   font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;
-  font-size:clamp(1rem,3.5vw,1.45rem);line-height:1.7;
-  color:var(--text);max-width:580px;margin:0 auto;
+  font-size:clamp(1.05rem, 3vw, 1.4rem);line-height:1.7;
+  color:var(--text);max-width:620px;margin:0 auto 2rem;
   opacity:0;animation:up 0.9s 0.5s ease forwards;
 }
 .hero-tagline strong{color:var(--cream2);font-style:normal;font-weight:400}
 
 .hero-roles{
-  display:flex;align-items:center;justify-content:center;gap:0.75rem;
-  margin-top:1.5rem;flex-wrap:wrap;
+  display:flex;align-items:center;justify-content:center;gap:0.6rem;
+  margin-bottom:2.5rem;flex-wrap:wrap;
   opacity:0;animation:up 0.8s 0.58s ease forwards;
 }
 .role-pill{
   font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;
-  border:1px solid var(--line);padding:0.3rem 0.8rem;color:var(--gold);
-  background:var(--gold-light);
+  border:1px solid var(--line);padding:0.35rem 0.85rem;color:var(--gold);
+  background:var(--gold-light); transition: all 0.3s ease;
 }
-.role-sep{color:var(--text3);font-size:0.6rem}
+.role-pill:hover{background:rgba(184,147,90,0.18);border-color:var(--gold2)}
 
 .hero-cta{
-  display:flex;align-items:center;justify-content:center;
-  gap:0.85rem;margin-top:2.25rem;flex-wrap:wrap;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1rem;margin-bottom:3rem;width:100%;
   opacity:0;animation:up 0.9s 0.66s ease forwards;
 }
-.btn-g{
+.btn-g, .btn-o{
+  width:100%;max-width:280px;text-align:center;
   font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:400;
-  padding:0.85rem 2rem;background:var(--gold);color:var(--ink);
-  border:1px solid var(--gold);transition:all 0.25s;display:inline-block;
+  padding:1rem 2rem;transition:all 0.25s;display:inline-block;
 }
+.btn-g{background:var(--gold);color:var(--ink);border:1px solid var(--gold)}
 .btn-g:hover{background:var(--gold2);border-color:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 36px var(--gold-glow)}
-.btn-o{
-  font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:400;
-  padding:0.85rem 2rem;background:transparent;color:var(--cream);
-  border:1px solid var(--line2);transition:all 0.25s;display:inline-block;
-}
-.btn-o:hover{border-color:var(--line);color:var(--gold2)}
+.btn-o{background:transparent;color:var(--cream);border:1px solid var(--line)}
+.btn-o:hover{border-color:var(--gold2);color:var(--gold2);transform:translateY(-2px)}
 
 .hero-stats{
-  display:inline-flex;border:1px solid var(--line);margin-top:2.75rem;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--line);width:100%;max-width:450px;margin:0 auto;
   opacity:0;animation:up 0.9s 0.78s ease forwards;
 }
-.hstat{padding:0.8rem 1.25rem;text-align:center;border-right:1px solid var(--line)}
+.hstat{padding:0.9rem 0.5rem;text-align:center;border-right:1px solid var(--line)}
 .hstat:last-child{border-right:none}
-.hstat-n{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.5rem;color:var(--gold2);display:block;line-height:1}
-.hstat-l{font-size:0.46rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text2);display:block;margin-top:0.35rem}
-
-.hero-scroll{
-  position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
-  opacity:0;animation:fade 1s 1.5s ease forwards;
-}
-.hscroll-bar{width:1px;height:2.5rem;background:linear-gradient(to bottom,var(--gold),transparent);animation:pulse 2s infinite}
-.hscroll-txt{font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--text3)}
-@keyframes pulse{0%,100%{opacity:0.35}50%{opacity:1}}
+.hstat-n{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.4rem;color:var(--gold2);display:block;line-height:1}
+.hstat-l{font-size:0.46rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text2);display:block;margin-top:0.4rem}
 
 /* ═══ SHARED ═══ */
 .sep{height:1px;background:linear-gradient(to right,transparent,var(--line) 15%,var(--line) 85%,transparent);margin:0 1.25rem}
@@ -220,27 +199,27 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 .pillar-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.1rem;color:var(--cream);letter-spacing:0.02em}
 .pillar-desc{font-size:0.82rem;line-height:1.9;color:var(--text2);font-weight:300}
 
-/* ═══ JOURNEY — timeline ═══ */
+/* ═══ JOURNEY ═══ */
 .timeline{display:flex;flex-direction:column;gap:0;margin-top:1.75rem}
 .tl-item{
-  display:grid;grid-template-columns:80px 1fr;gap:1.25rem;
+  display:grid;grid-template-columns:75px 1fr;gap:1rem;
   padding:1.5rem 0;border-bottom:1px solid var(--line2);
   position:relative;
 }
 .tl-item:last-child{border-bottom:none}
 .tl-item::before{
-  content:'';position:absolute;left:80px;top:0;bottom:0;width:1px;
+  content:'';position:absolute;left:75px;top:0;bottom:0;width:1px;
   background:var(--line);
 }
 .tl-year{
   font-family:'Cormorant Garamond',serif;font-weight:400;font-size:0.9rem;
-  color:var(--gold);letter-spacing:0.06em;padding-top:0.1rem;text-align:right;padding-right:1.25rem;
+  color:var(--gold);letter-spacing:0.06em;padding-top:0.1rem;text-align:right;padding-right:1rem;
 }
-.tl-content{padding-left:1.25rem}
+.tl-content{padding-left:1rem}
 .tl-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1rem;color:var(--cream);margin-bottom:0.3rem}
 .tl-sub{font-size:0.78rem;line-height:1.75;color:var(--text2);font-weight:300}
 .tl-dot{
-  position:absolute;left:calc(80px - 4px);top:1.6rem;
+  position:absolute;left:calc(75px - 4px);top:1.6rem;
   width:8px;height:8px;border-radius:50%;border:1px solid var(--gold);background:var(--ink);
   z-index:1;
 }
@@ -308,21 +287,21 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 .fbrand em{color:var(--gold);font-style:normal}
 .fnote{font-size:0.52rem;letter-spacing:0.1em;color:var(--text3)}
 
-/* ═══ REVEAL ═══ */
+/* ═══ REVEAL ANIMATIONS ═══ */
 .R{opacity:0;transform:translateY(14px);transition:opacity 0.8s ease,transform 0.8s ease}
 .R.on{opacity:1;transform:none}
 .Rd1{transition-delay:0.1s}.Rd2{transition-delay:0.2s}.Rd3{transition-delay:0.3s}
 
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-@keyframes fade{from{opacity:0}to{opacity:1}}
 
-/* ═══ TABLET ═══ */
+/* ═══ MEDIA QUERIES (TABLET & DESKTOP OPTIMIZATION) ═══ */
+@media(min-width:480px){
+  .hero-cta{flex-direction:row;gap:1.25rem}
+}
+
 @media(min-width:600px){
   .nav{padding:0 2rem}
-  .nav-logo{font-size:1rem;letter-spacing:0.14em;gap:0.5rem}
-  .nav-logo .full-name{display:inline}
-  .nav-logo .short-name{display:none}
-  .hero{padding:70px 2rem 3rem}
+  .hero{padding:90px 2rem 4rem}
   .sec{padding:6rem 2rem}
   .sep{margin:0 2rem}
   .vision-sec{padding:6rem 2rem}
@@ -333,11 +312,10 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   .pillar-card:nth-last-child(-n+2){border-bottom:none}
 }
 
-/* ═══ DESKTOP ═══ */
 @media(min-width:960px){
   .nav{padding:0 3.5rem}
-  .nav-links a{font-size:0.58rem;padding:0.4rem 0.8rem;letter-spacing:0.2em}
-  .hero{padding:72px 3.5rem 4rem}
+  .nav-links a{font-size:0.58rem;padding:0.4rem 0.8rem}
+  .hero{padding:100px 3.5rem 5rem}
   .sec{padding:7.5rem 3.5rem}
   .sep{margin:0 3.5rem}
   .story-layout{display:grid;grid-template-columns:200px 1fr;gap:5.5rem;align-items:start}
@@ -355,19 +333,12 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   .contact-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:start}
   .footer{padding:2rem 3.5rem}
 }
-@media(min-width:1200px){
-  .hero-h1{font-size:clamp(6rem,10vw,12rem)}
-}
 </style>
 </head>
 <body>
 
 <nav class="nav">
-  <div class="nav-logo">
-    <span class="nav-dot"></span>
-    <span class="full-name">R. Shinwari</span>
-    <span class="short-name">R. S.</span>
-  </div>
+  <div class="nav-logo"><span class="nav-dot"></span>R. Ghiasi</div>
   <ul class="nav-links">
     <li><a href="#story" data-fr="Mon histoire" data-en="My story">Mon histoire</a></li>
     <li><a href="#pillars" data-fr="Domaines" data-en="Domains">Domaines</a></li>
@@ -387,21 +358,16 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   <div class="hero-inner">
     <div class="hero-badge">
       <span class="hero-badge-line"></span>
-      <span data-fr="Strasbourg, France · En construction" data-en="Strasbourg, France · Under construction">Strasbourg, France · En construction</span>
+      <span data-fr="Strasbourg, France · En pleine expansion" data-en="Strasbourg, France · In full expansion">Strasbourg, France · En pleine expansion</span>
       <span class="hero-badge-line"></span>
     </div>
     <h1 class="hero-h1">
       <span class="h1-first">Rabnawaz</span>
-      <span class="h1-last">Shinwari</span>
+      <span class="h1-last">Ghiasi</span>
     </h1>
-    <div class="hero-sep">
-      <div class="hsep-l"></div>
-      <div class="hsep-d"></div>
-      <div class="hsep-l r"></div>
-    </div>
-    <p class="hero-tagline" data-fr="Je construis ma vie avec <strong>mes mains</strong> et ma pensée. Du chantier à la scène — je suis en train de devenir quelqu'un." data-en="I build my life with <strong>my hands</strong> and my mind. From the worksite to the stage — I am becoming someone.">Je construis ma vie avec <strong>mes mains</strong> et ma pensée. Du chantier à la scène — je suis en train de devenir quelqu'un.</p>
+    <p class="hero-tagline" data-fr="Je bâtis mes projets avec l'exigence du <strong>terrain</strong> et la clarté des idées. De la maîtrise technique à la prise de parole — façonner l'excellence au quotidien." data-en="I build my projects with the rigor of the <strong>field</strong> and the clarity of ideas. From technical mastery to public speaking — shaping excellence every day.">Je bâtis mes projets avec l'exigence du <strong>terrain</strong> et la clarté des idées. De la maîtrise technique à la prise de parole — façonner l'excellence au quotidien.</p>
     <div class="hero-roles">
-      <span class="role-pill" data-fr="Entrepreneur en devenir" data-en="Entrepreneur in the making">Entrepreneur en devenir</span>
+      <span class="role-pill" data-fr="Entrepreneur" data-en="Entrepreneur">Entrepreneur</span>
       <span class="role-pill" data-fr="Créateur de contenu" data-en="Content creator">Créateur de contenu</span>
       <span class="role-pill" data-fr="Public Speaker" data-en="Public Speaker">Public Speaker</span>
     </div>
@@ -411,13 +377,9 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     </div>
     <div class="hero-stats">
       <div class="hstat"><span class="hstat-n">4</span><span class="hstat-l" data-fr="Langues" data-en="Languages">Langues</span></div>
-      <div class="hstat"><span class="hstat-n">3</span><span class="hstat-l" data-fr="Métiers" data-en="Trades">Métiers</span></div>
-      <div class="hstat"><span class="hstat-n">∞</span><span class="hstat-l" data-fr="Ambition" data-en="Ambition">Ambition</span></div>
+      <div class="hstat"><span class="hstat-n">3</span><span class="hstat-l" data-fr="Expertises" data-en="Expertises">Expertises</span></div>
+      <div class="hstat"><span class="hstat-n">∞</span><span class="hstat-l" data-fr="Vision" data-en="Vision">Vision</span></div>
     </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="hscroll-bar"></div>
-    <span class="hscroll-txt" data-fr="Défiler" data-en="Scroll">Défiler</span>
   </div>
 </section>
 
@@ -432,14 +394,14 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     <div>
       <div class="eyebrow R" data-fr="Qui suis-je" data-en="Who I am">Qui suis-je</div>
       <h2 class="sh2 R Rd1" data-fr="Je ne viens pas d'un milieu facile. C'est pour ça que je construis <em>différemment.</em>" data-en="I don't come from an easy background. That's why I build <em>differently.</em>">Je ne viens pas d'un milieu facile. C'est pour ça que je construis <em>différemment.</em></h2>
-      <p class="story-body R Rd1" data-fr="Né le 01 novembre 2003 à Baghlan, Afghanistan, et de métier plombier chauffagiste, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur." data-en="Born on November 01, 2003, in Baghlan, Afghanistan, and a plumber and heating engineer by trade, I learned to build with my hands before building with my ideas. <strong>What I learned on worksites — rigor, method, respect for work well done</strong> — I now apply to my entrepreneurial projects.">Né le 01 novembre 2003 à Baghlan, Afghanistan, et de métier plombier chauffagiste, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur.</p>
-      <p class="story-body R Rd1" data-fr="Grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais." data-en="Raised between cultures, I speak French, English, Persian and Pashto. This richness is not a detail — it is my <strong>greatest strength</strong>. It allows me to reach millions of people that traditional content creators never reach.">Grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais.</p>
+      <p class="story-body R Rd1" data-fr="Plombier chauffagiste de métier, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur." data-en="A plumber and heating engineer by trade, I learned to build with my hands before building with my ideas. <strong>What I learned on worksites — rigor, method, respect for work well done</strong> — I now apply to my entrepreneurial projects.">Plombier chauffagiste de métier, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur.</p>
+      <p class="story-body R Rd1" data-fr="Né en Afghanistan, grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais." data-en="Born in Afghanistan, raised between cultures, I speak French, English, Persian and Pashto. This richness is not a detail — it is my <strong>greatest strength</strong>. It allows me to reach millions of people that traditional content creators never reach.">Né en Afghanistan, grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais.</p>
       <blockquote class="pull R Rd2" data-fr="&ldquo;On ne construit pas sa vie comme on construit une maison — mais les deux demandent les mêmes qualités : une bonne fondation, de la patience et du travail.&rdquo;" data-en="&ldquo;You don't build your life like you build a house — but both require the same qualities: a solid foundation, patience and work.&rdquo;">&ldquo;On ne construit pas sa vie comme on construit une maison — mais les deux demandent les mêmes qualités : une bonne fondation, de la patience et du travail.&rdquo;</blockquote>
       <div class="stags R Rd2">
         <span class="stag" data-fr="Pashto · Dari · Français · Anglais" data-en="Pashto · Dari · French · English">Pashto · Dari · Français · Anglais</span>
         <span class="stag">Strasbourg, France</span>
         <span class="stag" data-fr="CAP Plomberie-Chauffage" data-en="Plumbing & Heating Certificate">CAP Plomberie-Chauffage</span>
-        <span class="stag" data-fr="Entrepreneur en devenir" data-en="Entrepreneur in the making">Entrepreneur en devenir</span>
+        <span class="stag" data-fr="Entrepreneur" data-en="Entrepreneur">Entrepreneur</span>
       </div>
     </div>
   </div>
@@ -540,7 +502,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
       <div class="clinks">
         <a href="mailto:rabnawazshinwari1@gmail.com" class="crow"><span class="clbl">Email</span><span class="cval">rabnawazshinwari1@gmail.com</span></a>
         <a href="tel:+33651532857" class="crow"><span class="clbl">Téléphone</span><span class="cval">+33 6 51 53 28 57</span></a>
-        <a href="#" class="crow"><span class="clbl">Facebook</span><span class="cval">@RabnawazShinwari</span></a>
+        <a href="#" class="crow"><span class="clbl">Facebook</span><span class="cval">@RabnawazGhiasi</span></a>
         <a href="#" class="crow"><span class="clbl">Location</span><span class="cval">Strasbourg, 67000, France</span></a>
       </div>
     </div>
@@ -556,7 +518,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 </section>
 
 <footer class="footer">
-  <div class="fbrand">Rabnawaz <em>Shinwari</em></div>
+  <div class="fbrand">Rabnawaz <em>Ghiasi</em></div>
   <div class="fnote" data-fr="© 2026 · Tous droits réservés" data-en="© 2026 · All rights reserved">© 2026 · Tous droits réservés</div>
 </footer>
 
