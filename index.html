@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="google-site-verification" content="aZ6wKwLm68Fh9npX5PZDRZupQRA5myl6sqjAcnoRsoE" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rabnawaz Ghiasi — Entrepreneur, créateur de contenu et public speaker. Strasbourg, France.">
-<title>Rabnawaz Ghiasi</title>
+<meta name="description" content="Rabnawaz Shinwari — Entrepreneur, créateur de contenu et public speaker. Strasbourg, France.">
+<title>Rabnawaz Shinwari</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -26,32 +26,37 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 ::-webkit-scrollbar-track{background:var(--ink)}
 ::-webkit-scrollbar-thumb{background:var(--gold)}
 
-/* ═══ NAV ═══ */
+/* ═══ NAV OPTIMISÉE POUR MOBILE ═══ */
 .nav{
   position:fixed;inset:0 0 auto 0;z-index:999;height:60px;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  padding:0 1.25rem;
-  background:rgba(8,17,31,0.93);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 0.75rem;
+  background:rgba(8,17,31,0.95);
   backdrop-filter:blur(24px);border-bottom:1px solid var(--line);
 }
 .nav-logo{
   font-family:'Cormorant Garamond',serif;font-weight:500;
-  font-size:1rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--cream);flex-shrink:0;display:flex;align-items:center;gap:0.5rem;
+  font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--cream);flex-shrink:0;display:flex;align-items:center;gap:0.3rem;
 }
+.nav-logo .full-name{display:none} /* Masqué sur mobile */
+.nav-logo .short-name{display:inline} /* Visible sur mobile */
+
 .nav-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold-glow);flex-shrink:0}
-.nav-links{display:flex;list-style:none}
+.nav-links{display:flex;list-style:none;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0.25rem}
+.nav-links::-webkit-scrollbar{display:none} /* Cache la barre de défilement des liens sur mobile */
+
 .nav-links a{
-  font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--text2);padding:0.4rem 0.55rem;transition:color 0.2s;white-space:nowrap;
+  font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text2);padding:0.4rem 0.4rem;transition:color 0.2s;white-space:nowrap;
 }
 .nav-links a:hover{color:var(--gold2)}
-.nav-langs{display:flex;gap:2px;flex-shrink:0}
+.nav-langs{display:flex;gap:1px;flex-shrink:0}
 .nlang{
-  font-family:'Cormorant Garamond',serif;font-size:0.7rem;letter-spacing:0.1em;
-  color:var(--text2);padding:0.22rem 0.5rem;border:1px solid transparent;transition:all 0.2s;
+  font-family:'Cormorant Garamond',serif;font-size:0.65rem;letter-spacing:0.05em;
+  color:var(--text2);padding:0.2rem 0.35rem;border:1px solid transparent;transition:all 0.2s;
 }
-.nlang.on{color:var(--gold);border-color:var(--line)}
+.nlang.on{color:var(--gold);border-color:var(--line);background:var(--gold-light)}
 .nlang:hover{color:var(--gold2)}
 
 /* ═══ HERO ═══ */
@@ -85,16 +90,15 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 
 .hero-h1{
   font-family:'Cormorant Garamond',serif;font-weight:300;
-  font-size:clamp(2.6rem, 10vw, 7.5rem);
-  line-height:0.95;letter-spacing:0.05em;text-transform:uppercase;
+  font-size:clamp(3.8rem,13vw,10.5rem);
+  line-height:0.86;letter-spacing:0.05em;text-transform:uppercase;
   opacity:0;animation:up 1s 0.22s ease forwards;
 }
 .h1-first{display:block;color:var(--cream)}
 .h1-last{
   display:block;color:transparent;
-  -webkit-text-stroke:1px var(--gold2);
+  -webkit-text-stroke:1.5px var(--gold2);
   letter-spacing:0.09em;
-  margin-top: 0.2rem;
 }
 
 .hero-sep{
@@ -241,43 +245,6 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   z-index:1;
 }
 
-/* ═══ QUOTES SECTION ═══ */
-.quotes-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.quote-card {
-  background: var(--ink2);
-  border: 1px solid var(--line);
-  padding: 2rem;
-  position: relative;
-}
-.quote-card::after {
-  content: "“";
-  position: absolute;
-  top: 0.5rem;
-  right: 1.5rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 4rem;
-  color: rgba(184,147,90,0.1);
-}
-.quote-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.2rem;
-  color: var(--cream);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-.quote-meta {
-  font-size: 0.55rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
 /* ═══ VISION ═══ */
 .vision-sec{
   padding:5rem 1.25rem;background:var(--ink2);
@@ -344,9 +311,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 /* ═══ REVEAL ═══ */
 .R{opacity:0;transform:translateY(14px);transition:opacity 0.8s ease,transform 0.8s ease}
 .R.on{opacity:1;transform:none}
-.Rd1{transition-delay:0.1s}
-.Rd2{transition-delay:0.2s}
-.Rd3{transition-delay:0.3s}
+.Rd1{transition-delay:0.1s}.Rd2{transition-delay:0.2s}.Rd3{transition-delay:0.3s}
 
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
@@ -354,6 +319,9 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 /* ═══ TABLET ═══ */
 @media(min-width:600px){
   .nav{padding:0 2rem}
+  .nav-logo{font-size:1rem;letter-spacing:0.14em;gap:0.5rem}
+  .nav-logo .full-name{display:inline}
+  .nav-logo .short-name{display:none}
   .hero{padding:70px 2rem 3rem}
   .sec{padding:6rem 2rem}
   .sep{margin:0 2rem}
@@ -363,15 +331,13 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   .pillar-card{border-right:1px solid var(--line)}
   .pillar-card:nth-child(2n){border-right:none}
   .pillar-card:nth-last-child(-n+2){border-bottom:none}
-  .quotes-grid{grid-template-columns:repeat(2,1fr)}
 }
 
 /* ═══ DESKTOP ═══ */
 @media(min-width:960px){
   .nav{padding:0 3.5rem}
-  .nav-links a{font-size:0.58rem;padding:0.4rem 0.8rem}
+  .nav-links a{font-size:0.58rem;padding:0.4rem 0.8rem;letter-spacing:0.2em}
   .hero{padding:72px 3.5rem 4rem}
-  .hero-h1{font-size:clamp(4.5rem, 9vw, 9.5rem); -webkit-text-stroke:1.5px var(--gold2);}
   .sec{padding:7.5rem 3.5rem}
   .sep{margin:0 3.5rem}
   .story-layout{display:grid;grid-template-columns:200px 1fr;gap:5.5rem;align-items:start}
@@ -390,18 +356,21 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   .footer{padding:2rem 3.5rem}
 }
 @media(min-width:1200px){
-  .hero-h1{font-size:clamp(5.5rem, 9.5vw, 11.5rem)}
+  .hero-h1{font-size:clamp(6rem,10vw,12rem)}
 }
 </style>
 </head>
 <body>
 
 <nav class="nav">
-  <div class="nav-logo"><span class="nav-dot"></span>R. Ghiasi</div>
+  <div class="nav-logo">
+    <span class="nav-dot"></span>
+    <span class="full-name">R. Shinwari</span>
+    <span class="short-name">R. S.</span>
+  </div>
   <ul class="nav-links">
     <li><a href="#story" data-fr="Mon histoire" data-en="My story">Mon histoire</a></li>
     <li><a href="#pillars" data-fr="Domaines" data-en="Domains">Domaines</a></li>
-    <li><a href="#quotes" data-fr="Réflexions" data-en="Thoughts">Réflexions</a></li>
     <li><a href="#journey" data-fr="Parcours" data-en="Journey">Parcours</a></li>
     <li><a href="#vision" data-fr="Vision" data-en="Vision">Vision</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -418,21 +387,21 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   <div class="hero-inner">
     <div class="hero-badge">
       <span class="hero-badge-line"></span>
-      <span data-fr="Strasbourg, France · En pleine expansion" data-en="Strasbourg, France · Expanding vision">Strasbourg, France · En pleine expansion</span>
+      <span data-fr="Strasbourg, France · En construction" data-en="Strasbourg, France · Under construction">Strasbourg, France · En construction</span>
       <span class="hero-badge-line"></span>
     </div>
     <h1 class="hero-h1">
       <span class="h1-first">Rabnawaz</span>
-      <span class="h1-last">Ghiasi</span>
+      <span class="h1-last">Shinwari</span>
     </h1>
     <div class="hero-sep">
       <div class="hsep-l"></div>
       <div class="hsep-d"></div>
       <div class="hsep-l r"></div>
     </div>
-    <p class="hero-tagline" data-fr="Je bâtis mes projets avec l'exigence du <strong>terrain</strong> et la clarté des idées. De la maîtrise technique à la prise de parole — façonner l'excellence au quotidien." data-en="I build projects with the precision of **practical expertise** and clarity of thought. From technical mastery to public speaking — shaping excellence every day.">Je bâtis mes projets avec l'exigence du <strong>terrain</strong> et la clarté des idées. De la maîtrise technique à la prise de parole — façonner l'excellence au quotidien.</p>
+    <p class="hero-tagline" data-fr="Je construis ma vie avec <strong>mes mains</strong> et ma pensée. Du chantier à la scène — je suis en train de devenir quelqu'un." data-en="I build my life with <strong>my hands</strong> and my mind. From the worksite to the stage — I am becoming someone.">Je construis ma vie avec <strong>mes mains</strong> et ma pensée. Du chantier à la scène — je suis en train de devenir quelqu'un.</p>
     <div class="hero-roles">
-      <span class="role-pill" data-fr="Entrepreneur" data-en="Entrepreneur">Entrepreneur</span>
+      <span class="role-pill" data-fr="Entrepreneur en devenir" data-en="Entrepreneur in the making">Entrepreneur en devenir</span>
       <span class="role-pill" data-fr="Créateur de contenu" data-en="Content creator">Créateur de contenu</span>
       <span class="role-pill" data-fr="Public Speaker" data-en="Public Speaker">Public Speaker</span>
     </div>
@@ -442,8 +411,8 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     </div>
     <div class="hero-stats">
       <div class="hstat"><span class="hstat-n">4</span><span class="hstat-l" data-fr="Langues" data-en="Languages">Langues</span></div>
-      <div class="hstat"><span class="hstat-n">3</span><span class="hstat-l" data-fr="Expertises" data-en="Expertises">Expertises</span></div>
-      <div class="hstat"><span class="hstat-n">∞</span><span class="hstat-l" data-fr="Vision" data-en="Vision">Vision</span></div>
+      <div class="hstat"><span class="hstat-n">3</span><span class="hstat-l" data-fr="Métiers" data-en="Trades">Métiers</span></div>
+      <div class="hstat"><span class="hstat-n">∞</span><span class="hstat-l" data-fr="Ambition" data-en="Ambition">Ambition</span></div>
     </div>
   </div>
   <div class="hero-scroll">
@@ -462,17 +431,15 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     </div>
     <div>
       <div class="eyebrow R" data-fr="Qui suis-je" data-en="Who I am">Qui suis-je</div>
-      <h2 class="sh2 R Rd1" data-fr="La maîtrise technique est ma fondation. La création est mon <em>moteur.</em>" data-en="Technical mastery is my foundation. Creation is my <em>driver.</em>">La maîtrise technique est ma fondation. La création est mon <em>moteur.</em></h2>
-      
-      <p class="story-body R Rd1" data-fr="Né le 01 novembre 2003 à Baghlan, Afghanistan, et connu sous le nom officiel de <strong>Shinwari Rabnawaz</strong>, j’ai grandi au carrefour de cultures riches et inspirantes. Issu des métiers techniques du bâtiment et fort d'une solide formation thermique, j’ai développé une véritable culture de la rigueur et de l’action. <strong>Ce que le terrain m’a transmis — le sens de l'observation, la méthodologie et le respect de l'art de bâtir</strong> — constitue aujourd’hui le socle sur lequel je construis mes futurs projets d'entrepreneur." data-en="Born on November 01, 2003, in Baghlan, Afghanistan, and officially registered as <strong>Shinwari Rabnawaz</strong>, I grew up at the crossroads of rich and inspiring cultures. Coming from a technical building background with formal thermal training, I developed a solid culture of rigor and action. <strong>What field work has taught me — observation skills, methodology, and respect for craftsmanship</strong> — now serves as the foundation upon which I build my entrepreneurial projects.">Né le 01 novembre 2003 à Baghlan, Afghanistan, et connu sous le nom officiel de <strong>Shinwari Rabnawaz</strong>, j’ai grandi au carrefour de cultures riches et inspirantes. Issu des métiers techniques du bâtiment et fort d'une solide formation thermique, j’ai développé une véritable culture de la rigueur et de l’action. <strong>Ce que le terrain m’a transmis — le sens de l'observation, la méthodologie et le respect de l'art de bâtir</strong> — constitue aujourd’hui le socle sur lequel je construis mes futurs projets d'entrepreneur.</p>
-      
-      <p class="story-body R Rd1" data-fr="Riche de ce parcours multiculturel, je parle couramment français, anglais, persan et pashto. Cette diversité est un atout stratégique majeur. Elle me confère une agilité relationnelle unique et me permet de comprendre et d'inspirer des personnes d’horizons extrêmement variés." data-en="Enriched by this multicultural journey, I am fluent in French, English, Persian, and Pashto. This diversity is a major strategic asset. It grants me unique relational agility, enabling me to understand and inspire people from widely varied horizons.">Riche de ce parcours multiculturel, je parle couramment français, anglais, persan et pashto. Cette diversité est un atout stratégique majeur. Elle me confère une agilité relationnelle unique et me permet de comprendre et d'inspirer des personnes d’horizons extrêmement variés.</p>
-      <blockquote class="pull R Rd2" data-fr="&ldquo;L’excellence ne s'improvise pas : elle exige des fondations solides, de la persévérance et une exécution précise.&rdquo;" data-en="&ldquo;Excellence cannot be improvised: it requires solid foundations, perseverance, and precise execution.&rdquo;">&ldquo;L’excellence ne s'improvise pas : elle exige des fondations solides, de la persévérance et une exécution précise.&rdquo;</blockquote>
+      <h2 class="sh2 R Rd1" data-fr="Je ne viens pas d'un milieu facile. C'est pour ça que je construis <em>différemment.</em>" data-en="I don't come from an easy background. That's why I build <em>differently.</em>">Je ne viens pas d'un milieu facile. C'est pour ça que je construis <em>différemment.</em></h2>
+      <p class="story-body R Rd1" data-fr="Né le 01 novembre 2003 à Baghlan, Afghanistan, et de métier plombier chauffagiste, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur." data-en="Born on November 01, 2003, in Baghlan, Afghanistan, and a plumber and heating engineer by trade, I learned to build with my hands before building with my ideas. <strong>What I learned on worksites — rigor, method, respect for work well done</strong> — I now apply to my entrepreneurial projects.">Né le 01 novembre 2003 à Baghlan, Afghanistan, et de métier plombier chauffagiste, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur.</p>
+      <p class="story-body R Rd1" data-fr="Grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais." data-en="Raised between cultures, I speak French, English, Persian and Pashto. This richness is not a detail — it is my <strong>greatest strength</strong>. It allows me to reach millions of people that traditional content creators never reach.">Grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais.</p>
+      <blockquote class="pull R Rd2" data-fr="&ldquo;On ne construit pas sa vie comme on construit une maison — mais les deux demandent les mêmes qualités : une bonne fondation, de la patience et du travail.&rdquo;" data-en="&ldquo;You don't build your life like you build a house — but both require the same qualities: a solid foundation, patience and work.&rdquo;">&ldquo;On ne construit pas sa vie comme on construit une maison — mais les deux demandent les mêmes qualités : une bonne fondation, de la patience et du travail.&rdquo;</blockquote>
       <div class="stags R Rd2">
-        <span class="stag" data-fr="Français · Anglais · Persan · Pashto" data-en="French · English · Persian · Pashto">Français · Anglais · Persan · Pashto</span>
+        <span class="stag" data-fr="Pashto · Dari · Français · Anglais" data-en="Pashto · Dari · French · English">Pashto · Dari · Français · Anglais</span>
         <span class="stag">Strasbourg, France</span>
-        <span class="stag" data-fr="CAP Installation Thermique" data-en="Thermal Installation Degree">CAP Installation Thermique</span>
-        <span class="stag" data-fr="Vision & Entrepreneuriat" data-en="Vision & Entrepreneurship">Vision & Entrepreneuriat</span>
+        <span class="stag" data-fr="CAP Plomberie-Chauffage" data-en="Plumbing & Heating Certificate">CAP Plomberie-Chauffage</span>
+        <span class="stag" data-fr="Entrepreneur en devenir" data-en="Entrepreneur in the making">Entrepreneur en devenir</span>
       </div>
     </div>
   </div>
@@ -481,59 +448,37 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 <div class="sep"></div>
 
 <section class="sec" id="pillars">
-  <div class="eyebrow R" data-fr="Mes axes d'impact" data-en="My pillars of impact">Mes axes d'impact</div>
-  <h2 class="sh2 R Rd1" data-fr="Une vision globale. Trois leviers de <em>croissance.</em>" data-en="A global vision. Three levers of <em>growth.</em>">Une vision globale. Trois leviers de <em>croissance.</em></h2>
+  <div class="eyebrow R" data-fr="Ce que je construis" data-en="What I build">Ce que je construis</div>
+  <h2 class="sh2 R Rd1" data-fr="Trois voix. Une <em>direction.</em>" data-en="Three voices. One <em>direction.</em>">Trois voix. Une <em>direction.</em></h2>
   <div class="pillars-grid R Rd2">
     <div class="pillar-card">
       <div class="pillar-top">
         <span class="pillar-idx">01</span>
-        <span class="pillar-title" data-fr="Entrepreneuriat" data-en="Entrepreneurship">Entrepreneuriat</span>
+        <span class="pillar-title" data-fr="Entrepreneur" data-en="Entrepreneur">Entrepreneur</span>
       </div>
-      <p class="pillar-desc" data-fr="Je déploie des projets avec une approach structurée — transformant chaque compétence acquise en levier de valeur. Mon focus principal s'oriente vers le développement d’actifs et l’indépendance financière pérenne." data-en="I deploy projects with a structured approach — transforming every acquired skill into value leverage. My main focus is directed toward asset development and sustainable financial independence.">Je déploie des projets avec une approche structurée — transformant chaque compétence acquise en levier de valeur. Mon focus principal s'oriente vers le développement d’actifs et l’indépendance financière pérenne.</p>
+      <p class="pillar-desc" data-fr="Je construis des projets avec méthode — une compétence à la fois, à fond. Mon objectif : bâtir une indépendance financière réelle à travers l'entrepreneuriat et l'immobilier." data-en="I build projects methodically — one skill at a time, fully committed. My goal: build real financial independence through entrepreneurship and real estate.">Je construis des projets avec méthode — une compétence à la fois, à fond. Mon objectif : bâtir une indépendance financière réelle à travers l'entrepreneuriat et l'immobilier.</p>
     </div>
     <div class="pillar-card">
       <div class="pillar-top">
         <span class="pillar-idx">02</span>
-        <span class="pillar-title" data-fr="Création de contenu" data-en="Content creation">Créateur de contenu</span>
+        <span class="pillar-title" data-fr="Créateur de contenu" data-en="Content creator">Créateur de contenu</span>
       </div>
-      <p class="pillar-desc" data-fr="Je formalise et transmets mes perspectives sur l’identité, la hauteur d’esprit, la liberté et l’évolution sociétale. Mon contenu multilingue s'adresse à ceux qui exigent de la substance et de la clarté." data-en="I formalize and broadcast my perspectives on identity, high-mindedness, freedom, and societal evolution. My multilingual content is tailored for those who demand substance and clarity.">Je formalise et transmets mes perspectives sur l’identité, la hauteur d’esprit, la liberté et l’évolution sociétale. Mon contenu multilingue s'adresse à ceux qui exigent de la substance et de la clarté.</p>
+      <p class="pillar-desc" data-fr="Je partage mes réflexions sur la vie, l'identité, la liberté et la société — en plusieurs langues. Pour des millions de personnes qui cherchent une voix authentique qui leur ressemble." data-en="I share my thoughts on life, identity, freedom and society — in multiple languages. For millions of people looking for an authentic voice that resembles them.">Je partage mes réflexions sur la vie, l'identité, la liberté et la société — en plusieurs langues. Pour des millions de personnes qui cherchent une voix authentique qui leur ressemble.</p>
     </div>
     <div class="pillar-card">
       <div class="pillar-top">
         <span class="pillar-idx">03</span>
-        <span class="pillar-title" data-fr="Public Speaking" data-en="Public Speaking">Public Speaker</span>
+        <span class="pillar-title" data-fr="Public Speaker" data-en="Public Speaker">Public Speaker</span>
       </div>
-      <p class="pillar-desc" data-fr="L'art oratoire est le catalyseur de la pensée. Je structure cette compétence clé pour captiver les audiences, piloter le changement et susciter des dynamiques collaboratives d'envergure." data-en="Public speaking is the catalyst of thought. I structure this key skill to captivate audiences, drive change, and spark large-scale collaborative dynamics.">L'art oratoire est le catalyseur de la pensée. Je structure cette compétence clé pour captiver les audiences, piloter le changement et susciter des dynamiques collaboratives d'envergure.</p>
+      <p class="pillar-desc" data-fr="Prendre la parole en public, c'est transformer une pensée en impact. Je développe cette compétence pour inspirer, questionner et provoquer des conversations qui comptent." data-en="Speaking in public is turning a thought into impact. I develop this skill to inspire, question and provoke conversations that matter.">Prendre la parole en public, c'est transformer une pensée en impact. Je développe cette compétence pour inspirer, questionner et provoquer des conversations qui comptent.</p>
     </div>
     <div class="pillar-card">
       <div class="pillar-top">
         <span class="pillar-idx">04</span>
-        <span class="pillar-title" data-fr="Haute performance" data-en="High performance">Haute performance</span>
+        <span class="pillar-title" data-fr="Développement personnel" data-en="Personal development">Développement personnel</span>
       </div>
-      <p class="pillar-desc" data-fr="Le développement personnel est une stratégie de précision. Discipline absolue, architecture mentale affûtée et maîtrise de soi forment l'infrastructure indispensable de toute ma réussite." data-en="Personal development is a precision strategy. Absolute discipline, a sharp mental architecture, and self-mastery form the indispensable infrastructure of all my success.">Le développement personnel est une stratégie de précision. Discipline absolue, architecture mentale affûtée et maîtrise de soi forment l'infrastructure indispensable de toute ma réussite.</p>
+      <p class="pillar-desc" data-fr="Avant tout le reste, je me construis moi-même. Discipline, clarté mentale, connaissance de soi — c'est la fondation sur laquelle tout le reste repose." data-en="Before everything else, I build myself. Discipline, mental clarity, self-knowledge — this is the foundation on which everything else rests.">Avant tout le reste, je me construis moi-même. Discipline, clarté mentale, connaissance de soi — c'est la fondation sur laquelle tout le reste repose.</p>
     </div>
-  </div>
-</section>
-
-<div class="sep"></div>
-
-<section class="sec" id="quotes">
-  <div class="eyebrow R" data-fr="Pensées & Réflexions" data-en="Thoughts & Quotes">Pensées & Réflexions</div>
-  <h2 class="sh2 R Rd1" data-fr="Extraits de mes publications sur les <em>réseaux.</em>" data-en="Excerpts from my social media <em>publications.</em>">Extraits de mes publications sur les <em>réseaux.</em></h2>
-  
-  <div class="quotes-grid R Rd2">
-    <div class="quote-card">
-      <p class="quote-text" data-fr="&ldquo;Le succès durable ne se cherche pas dans le regard des autres, il se construit d'abord en étant en accord total avec sa propre vision.&rdquo;" data-en="&ldquo;Sustainable success is not found in the eyes of others; it is built first by being in total alignment with your own vision.&rdquo;">&ldquo;Le succès durable ne se cherche pas dans le regard des autres, il se construit d'abord en étant en accord total avec sa propre vision.&rdquo;</p>
-      <div class="quote-meta">Facebook · Rabnawaz Ghiasi</div>
-    </div>
-    <div class="quote-card">
-      <p class="quote-text" data-fr="&ldquo;Chaque expérience vécue sur le terrain est une leçon de stratégie. On apprend autant sur un plan technique que sur l'art de mener un projet à son excellence.&rdquo;" data-en="&ldquo;Every experience lived in the field is a lesson in strategy. We learn as much on a technical level as on the art of leading a project to excellence.&rdquo;">&ldquo;Chaque expérience vécue sur le terrain est une leçon de stratégie. On apprend autant sur un plan technique que sur l'art de mener un projet à son excellence.&rdquo;</p>
-      <div class="quote-meta">Facebook · Rabnawaz Ghiasi</div>
-    </div>
-  </div>
-  
-  <div style="margin-top: 2rem; text-align: center;" class="R Rd3">
-    <a href="https://www.facebook.com/share/1AWUggz85i/" target="_blank" class="btn-o" style="font-size: 0.5rem;" data-fr="Rejoindre mon compte Facebook" data-en="Join my Facebook account">Rejoindre mon compte Facebook</a>
   </div>
 </section>
 
@@ -541,38 +486,38 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 
 <section class="sec" id="journey">
   <div class="eyebrow R" data-fr="Mon parcours" data-en="My journey">Mon parcours</div>
-  <h2 class="sh2 R Rd1" data-fr="Trajectoire d'apprentissage et <em>évolution.</em>" data-en="Trajectory of learning and <em>evolution.</em>">Trajectoire d'apprentissage et <em>evolution.</em></h2>
+  <h2 class="sh2 R Rd1" data-fr="D'où je viens. Où je <em>vais.</em>" data-en="Where I come from. Where I'm <em>going.</em>">D'où je viens. Où je <em>vais.</em></h2>
   <div class="timeline R Rd2">
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year">2021–23</div>
       <div class="tl-content">
-        <div class="tl-title" data-fr="CAP Monteur en Installation Thermique · Lycée Cachin" data-en="Thermal Installation Degree · Lycée Cachin">CAP Monteur en Installation Thermique · Lycée Cachin</div>
-        <div class="tl-sub" data-fr="Cherbourg. Apprentissage de l'ingénierie des fluides, de la gestion des réseaux thermiques et de la lecture de plans. Validation des bases de l'organisation opérationnelle." data-en="Cherbourg. Training in fluid engineering, thermal network management, and blueprint reading. Validation of operational organization bases.">Cherbourg. Apprentissage de l'ingénierie des fluides, de la gestion des réseaux thermiques et de la lecture de plans. Validation des bases de l'organisation opérationnelle.</div>
+        <div class="tl-title" data-fr="CAP Monteur en installation thermique" data-en="Plumbing & Heating Certificate">CAP Monteur en installation thermique</div>
+        <div class="tl-sub" data-fr="Lycée Cachin, Cherbourg. Formation pratique et théorique. Apprentissage de la rigueur et de la méthode — les premières vraies leçons de ma vie professionnelle." data-en="Lycée Cachin, Cherbourg. Practical and theoretical training. Learning rigor and method — the first real lessons of my professional life.">Lycée Cachin, Cherbourg. Formation pratique et théorique. Apprentissage de la rigueur et de la méthode — les premières vraies leçons de ma vie professionnelle.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year">2022–25</div>
       <div class="tl-content">
-        <div class="tl-title" data-fr="Expériences et Polyvalence Métier" data-en="Experience & Professional Versatility">Expériences et Polyvalence Métier</div>
-        <div class="tl-sub" data-fr="Développement de l'adaptabilité à travers des missions variées dans l'artisanat, la gestion de flux et le travail d'équipe (Boulangerie Bâtard, Domino's Pizza). Une école de l'agilité commerciale et de la réactivité." data-en="Development of adaptability through varied missions in craftsmanship, flow management, and teamwork (Boulangerie Bâtard, Domino's Pizza). A school of responsiveness and commerce.">Développement de l'adaptabilité à travers des missions variées dans l'artisanat, la gestion de flux et le travail d'équipe (Boulangerie Bâtard, Domino's Pizza). Une école de l'agilité commerciale et de la réactivité.</div>
+        <div class="tl-title" data-fr="Premières expériences professionnelles" data-en="First professional experiences">Premières expériences professionnelles</div>
+        <div class="tl-sub" data-fr="Boulangerie, restauration, conditionnement — des métiers différents qui m'ont appris l'adaptabilité, l'humilité et la valeur du travail bien fait." data-en="Bakery, catering, packaging — different trades that taught me adaptability, humility and the value of work well done.">Boulangerie, restauration, conditionnement — des métiers différents qui m'ont appris l'adaptabilité, l'humilité et la valeur du travail bien fait.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year">2025–26</div>
       <div class="tl-content">
-        <div class="tl-title" data-fr="Strasbourg — Expériences Techniques et Projets" data-en="Strasbourg — Technical Experience & Ventures">Strasbourg — Expériences Techniques et Projets</div>
-        <div class="tl-sub" data-fr="Arrivée à Strasbourg. Réalisation de missions techniques en installations thermiques sur des chantiers d'envergure (notamment hospitaliers), tout en structurant en parallèle ma vision d'indépendant." data-en="Arrival in Strasbourg. Execution of technical thermal installation missions on large-scale worksites (notably hospital grade), while simultaneously structuring my independent vision.">Arrivée à Strasbourg. Réalisation de missions techniques en installations thermiques sur des chantiers d'envergure (notamment hospitaliers), tout en structurant en parallèle ma vision d'indépendant.</div>
+        <div class="tl-title" data-fr="Strasbourg — Nouveau départ" data-en="Strasbourg — New beginning">Strasbourg — Nouveau départ</div>
+        <div class="tl-sub" data-fr="Installé à Strasbourg, je travaille comme chauffagiste chez Eiffage et parallèlement je construis ma vision d'entrepreneur. Le chantier le matin, les projets le soir." data-en="Based in Strasbourg, I work as a heating engineer at Eiffage and simultaneously build my entrepreneurial vision. The worksite in the morning, projects in the evening.">Installé à Strasbourg, je travaille comme chauffagiste chez Eiffage et parallèlement je construis ma vision d'entrepreneur. Le chantier le matin, les projets le soir.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year" style="color:var(--gold3)">2026 →</div>
       <div class="tl-content">
-        <div class="tl-title" style="color:var(--gold2)" data-fr="Déploiement Entrepreneurial" data-en="Entrepreneurial Deployment">Déploiement Entrepreneurial</div>
-        <div class="tl-sub" data-fr="Lancement de mes propres structures, intensification de ma présence digitale multilingue et déploiement de mes interventions publiques." data-en="Launch of my own business structures, expansion of my multilingual digital presence, and deployment of public speaking engagements.">Lancement de mes propres structures, intensification de ma présence digitale multilingue et déploiement de mes interventions publiques.</div>
+        <div class="tl-title" style="color:var(--gold2)" data-fr="La prochaine étape — en cours" data-en="The next step — in progress">La prochaine étape — en cours</div>
+        <div class="tl-sub" data-fr="Lancement de mes premiers projets entrepreneuriaux, développement de ma présence en ligne, prise de parole publique. Le plus dur est fait : j'ai commencé." data-en="Launching my first entrepreneurial projects, developing my online presence, public speaking. The hardest part is done: I've started.">Lancement de mes premiers projets entrepreneuriaux, développement de ma présence en ligne, prise de parole publique. Le plus dur est fait : j'ai commencé.</div>
       </div>
     </div>
   </div>
@@ -581,36 +526,37 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 <section class="vision-sec" id="vision">
   <div class="vglow"></div>
   <div class="vorn R">❧</div>
-  <div class="eyebrow R" style="justify-content:center" data-fr="Philosophie de vie" data-en="Philosophy">Philosophie de vie</div>
-  <p class="vquote R Rd1" data-fr="La véritable puissance ne réside pas dans la vitesse, mais dans la clarté de la <em>direction</em> et la conscience de chaque geste." data-en="True power lies not in speed, but in the clarity of <em>direction</em> and intentional awareness behind every gesture.">La véritable puissance ne réside pas dans la vitesse, mais dans la clarté de la <em>direction</em> et la conscience de chaque geste.</p>
-  <p class="vsub R Rd2" data-fr="Je crois en une réussite totale qui honore nos racines tout en repoussant constamment nos frontières. Le succès durable naît d'une clarté absolue envers soi-même et de l'audace d'exécuter sa vision sans compromis." data-en="I believe in total success that honors our roots while constantly expanding our horizons. Long-term success is born from absolute clarity and the audacity to execute one's vision without compromise.">Je crois en une réussite totale qui honore nos racines tout en repoussant constamment nos frontières. Le succès durable naît d'une clarté absolue envers soi-même et de l'audace d'exécuter sa vision sans compromis.</p>
+  <div class="eyebrow R" style="justify-content:center" data-fr="Ce en quoi je crois" data-en="What I believe">Ce en quoi je crois</div>
+  <p class="vquote R Rd1" data-fr="On ne devient pas grand en courant plus vite. On le devient en marchant avec plus de <em>conscience</em>." data-en="You don't become great by running faster. You become great by walking with more <em>awareness</em>.">On ne devient pas grand en courant plus vite. On le devient en marchant avec plus de <em>conscience</em>.</p>
+  <p class="vsub R Rd2" data-fr="Je crois qu'on peut changer sa vie sans trahir qui on est. Que la réussite la plus solide commence toujours par une honnêteté brutale avec soi-même — et le courage de commencer." data-en="I believe you can change your life without betraying who you are. That the most solid success always starts with brutal honesty with yourself — and the courage to begin.">Je crois qu'on peut changer sa vie sans trahir qui on est. Que la réussite la plus solide commence toujours par une honnêteté brutale avec soi-même — et le courage de commencer.</p>
 </section>
 
 <section class="sec" id="contact">
   <div class="contact-layout">
     <div class="R">
-      <div class="eyebrow" data-fr="Partenariats & Synergies" data-en="Partnerships & Synergies">Partenariats & Synergies</div>
-      <h2 class="ch" data-fr="Créons de la <em>valeur.</em>" data-en="Let's build <em>value.</em>">Créons de la <em>valeur.</em></h2>
-      <p class="csub" data-fr="Pour toute proposition de collaboration, intervention publique ou projet de création, échangeons de manière concrète." data-en="For any collaboration proposal, public speaking request, or creation project, let's establish a direct and productive dialogue.">Pour toute proposition de collaboration, intervention publique ou projet de création, échangeons de manière concrète.</p>
+      <div class="eyebrow" data-fr="Restons en contact" data-en="Stay in touch">Restons en contact</div>
+      <h2 class="ch" data-fr="Parlons-nous <em>vraiment.</em>" data-en="Let's actually <em>talk.</em>">Parlons-nous <em>vraiment.</em></h2>
+      <p class="csub" data-fr="Un projet, une collaboration, une question. Je suis là. Les vraies conversations m'intéressent plus que les messages polis." data-en="A project, a collaboration, a question. I'm here. Real conversations interest me more than polite messages.">Un projet, une collaboration, une question. Je suis là. Les vraies conversations m'intéressent plus que les messages polis.</p>
       <div class="clinks">
         <a href="mailto:rabnawazshinwari1@gmail.com" class="crow"><span class="clbl">Email</span><span class="cval">rabnawazshinwari1@gmail.com</span></a>
-        <a href="https://www.facebook.com/share/1AWUggz85i/" target="_blank" class="crow"><span class="clbl">Facebook</span><span class="cval">@RabnawazGhiasi</span></a>
-        <a href="#" class="crow"><span class="clbl">Adresse</span><span class="cval">Strasbourg, 67000, France</span></a>
+        <a href="tel:+33651532857" class="crow"><span class="clbl">Téléphone</span><span class="cval">+33 6 51 53 28 57</span></a>
+        <a href="#" class="crow"><span class="clbl">Facebook</span><span class="cval">@RabnawazShinwari</span></a>
+        <a href="#" class="crow"><span class="clbl">Location</span><span class="cval">Strasbourg, 67000, France</span></a>
       </div>
     </div>
     <div class="R Rd1">
       <div class="form">
-        <div class="fg"><label class="fl" data-fr="Votre nom" data-en="Your name">Votre nom</label><input class="fi" type="text" placeholder="Entrez votre nom" /></div>
-        <div class="fg"><label class="fl">Email</label><input class="fi" type="email" placeholder="votre@email.com" /></div>
-        <div class="fg"><label class="fl" data-fr="Votre message" data-en="Your message">Votre message</label><textarea class="ft" placeholder="Décrivez l'objet de votre démarche..."></textarea></div>
-        <button class="fsub" id="fsub" data-fr="Initier le contact →" data-en="Connect →">Initier le contact →</button>
+        <div class="fg"><label class="fl" data-fr="Ton prénom" data-en="Your name">Ton prénom</label><input class="fi" type="text" placeholder="Comment tu t'appelles ?" /></div>
+        <div class="fg"><label class="fl">Email</label><input class="fi" type="email" placeholder="ton@email.com" /></div>
+        <div class="fg"><label class="fl" data-fr="Ton message" data-en="Your message">Ton message</label><textarea class="ft" placeholder="Dis-moi ce qui t'amène..."></textarea></div>
+        <button class="fsub" id="fsub" data-fr="Envoyer →" data-en="Send →">Envoyer →</button>
       </div>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="fbrand">Rabnawaz <em>Ghiasi</em></div>
+  <div class="fbrand">Rabnawaz <em>Shinwari</em></div>
   <div class="fnote" data-fr="© 2026 · Tous droits réservés" data-en="© 2026 · All rights reserved">© 2026 · Tous droits réservés</div>
 </footer>
 
@@ -627,7 +573,7 @@ const obs=new IntersectionObserver(es=>{
 document.querySelectorAll('.R').forEach(el=>obs.observe(el));
 document.getElementById('fsub').addEventListener('click',function(){
   const done=cur==='fr'?'Envoyé ✓':'Sent ✓';
-  const orig=cur==='fr'?'Initier le contact →':'Connect →';
+  const orig=cur==='fr'?'Envoyer →':'Send →';
   this.textContent=done;this.style.background='var(--gold)';this.style.color='var(--ink)';
   setTimeout(()=>{this.textContent=orig;this.style.background='';this.style.color=''},3000);
 });
