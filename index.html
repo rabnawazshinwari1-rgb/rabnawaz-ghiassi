@@ -240,6 +240,43 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   z-index:1;
 }
 
+/* ═══ FACEBOOK QUOTES SECTION ═══ */
+.quotes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.quote-card {
+  background: var(--ink2);
+  border: 1px solid var(--line);
+  padding: 2rem;
+  position: relative;
+}
+.quote-card::after {
+  content: "“";
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  color: rgba(184,147,90,0.1);
+}
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--cream);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.quote-meta {
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
 /* ═══ VISION ═══ */
 .vision-sec{
   padding:5rem 1.25rem;background:var(--ink2);
@@ -325,6 +362,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   .pillar-card{border-right:1px solid var(--line)}
   .pillar-card:nth-child(2n){border-right:none}
   .pillar-card:nth-last-child(-n+2){border-bottom:none}
+  .quotes-grid{grid-template-columns:repeat(2,1fr)}
 }
 
 /* ═══ DESKTOP ═══ */
@@ -361,6 +399,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   <ul class="nav-links">
     <li><a href="#story" data-fr="Mon histoire" data-en="My story">Mon histoire</a></li>
     <li><a href="#pillars" data-fr="Domaines" data-en="Domains">Domaines</a></li>
+    <li><a href="#quotes" data-fr="Réflexions" data-en="Thoughts">Réflexions</a></li>
     <li><a href="#journey" data-fr="Parcours" data-en="Journey">Parcours</a></li>
     <li><a href="#vision" data-fr="Vision" data-en="Vision">Vision</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -422,14 +461,14 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     <div>
       <div class="eyebrow R" data-fr="Qui suis-je" data-en="Who I am">Qui suis-je</div>
       <h2 class="sh2 R Rd1" data-fr="La maîtrise technique est ma fondation. La création est mon <em>moteur.</em>" data-en="Technical mastery is my foundation. Creation is my <em>driver.</em>">La maîtrise technique est ma fondation. La création est mon <em>moteur.</em></h2>
-      <p class="story-body R Rd1" data-fr="Plombier chauffagiste hautement qualifié de métier (connu sous le nom officiel de <strong>Shinwari Rabnawaz</strong>), j’ai développé une solide culture de l’exigence et de l’action concrète. <strong>Ce que le terrain m’a transmis — la précision chirurgicale, la méthodologie rigoureuse, le respect absolu de l'art de bâtir</strong> — constitue aujourd’hui le socle inébranlable de mes ambitions entrepreneuriales chez Eiffage Énergie Systèmes." data-en="A highly skilled plumber and heating engineer by trade (officially registered as <strong>Shinwari Rabnawaz</strong>), I have cultivated a strong culture of high standards and concrete action. <strong>What field experience has taught me — surgical precision, rigorous methodology, and absolute respect for craftsmanship</strong> — now serves as the unshakeable foundation for my entrepreneurial ambitions at Eiffage Énergie Systèmes.">Plombier chauffagiste hautement qualifié de métier (connu sous le nom officiel de <strong>Shinwari Rabnawaz</strong>), j’ai développé une solide culture de l’exigence et de l’action concrète. <strong>Ce que le terrain m’a transmis — la précision chirurgicale, la méthodologie rigoureuse, le respect absolu de l'art de bâtir</strong> — constitue aujourd’hui le socle inébranlable de mes ambitions entrepreneuriales chez Eiffage Énergie Systèmes.</p>
-      <p class="story-body R Rd1" data-fr="Riche d'un parcours multiculturel d’origine afghane, je maîtrise parfaitement le français, l’anglais, le persan et le pashto. Cette polyglossie est un atout stratégique majeur. Elle me confère une agilité relationnelle unique et me donne les clés pour fédérer, inspirer et impacter une audience internationale, bien au-delà des frontières traditionnelles." data-en="Enriched by a multicultural background from Afghanistan, I am fully fluent in French, English, Persian, and Pashto. This multilingualism is a major strategic asset. It grants me unique relational agility and gives me the tools to unite, inspire, and impact an international audience, far beyond traditional borders.">Riche d'un parcours multiculturel d’origine afghane, je maîtrise parfaitement le français, l’anglais, le persan et le pashto. Cette polyglossie est un atout stratégique majeur. Elle me confère une agilité relationnelle unique et me donne les clés pour fédérer, inspirer et impacter une audience internationale, bien au-delà des frontières traditionnelles.</p>
-      <blockquote class="pull R Rd2" data-fr="&ldquo;L’excellence ne s'improvise pas : elle exige des fondations solides, de la persévérance et une exécution irréprochable.&rdquo;" data-en="&ldquo;Excellence cannot be improvised: it requires solid foundations, perseverance, and flawless execution.&rdquo;">&ldquo;L’excellence ne s'improvise pas : elle exige des fondations solides, de la persévérance et une exécution irréprochable.&rdquo;</blockquote>
+      <p class="story-body R Rd1" data-fr="Issu des métiers techniques du bâtiment et fort d'une formation thermique (connu sous le nom officiel de <strong>Shinwari Rabnawaz</strong>), j’ai développé une véritable culture de la rigueur et de l’action. <strong>Ce que le terrain m’a transmis — le sens de l'observation, la méthodologie et le respect de l'art de bâtir</strong> — constitue aujourd’hui le socle sur lequel je construis mes futurs projets d'entrepreneur." data-en="Coming from a technical building background with formal thermal training (officially registered as <strong>Shinwari Rabnawaz</strong>), I developed a solid culture of rigor and action. <strong>What field work has taught me — observation skills, methodology, and respect for craftsmanship</strong> — now serves as the foundation upon which I build my entrepreneurial projects.">Issu des métiers techniques du bâtiment et fort d'une formation thermique (connu sous le nom officiel de <strong>Shinwari Rabnawaz</strong>), j’ai développé une véritable culture de la rigueur et de l’action. <strong>Ce que le terrain m’a transmis — le sens de l'observation, la méthodologie et le respect de l'art de bâtir</strong> — constitue aujourd’hui le socle sur lequel je construis mes futurs projets d'entrepreneur.</p>
+      <p class="story-body R Rd1" data-fr="Riche d'un parcours multiculturel d’origine afghane, je parle couramment français, anglais, persan et pashto. Cette diversité est un atout stratégique majeur. Elle me confère une agilité relationnelle unique et me permet de comprendre et d'inspirer des personnes d’horizons extrêmement variés." data-en="Enriched by a multicultural background from Afghanistan, I am fluent in French, English, Persian, and Pashto. This diversity is a major strategic asset. It grants me unique relational agility, enabling me to understand and inspire people from widely varied horizons.">Riche d'un parcours multiculturel d’origine afghane, je parle couramment français, anglais, persan et pashto. Cette diversité est un atout stratégique majeur. Elle me confère une agilité relationnelle unique et me permet de comprendre et d'inspirer des personnes d’horizons extrêmement variés.</p>
+      <blockquote class="pull R Rd2" data-fr="&ldquo;L’excellence ne s'improvise pas : elle exige des fondations solides, de la persévérance et une exécution précise.&rdquo;" data-en="&ldquo;Excellence cannot be improvised: it requires solid foundations, perseverance, and precise execution.&rdquo;">&ldquo;L’excellence ne s'improvise pas : elle exige des fondations solides, de la persévérance et une exécution précise.&rdquo;</blockquote>
       <div class="stags R Rd2">
-        <span class="stag" data-fr="Français (B2) · Anglais (B1) · Persan · Pashto" data-en="French (B2) · English (B1) · Persian · Pashto">Français (B2) · Anglais (B1) · Persan · Pashto</span>
+        <span class="stag" data-fr="Français · Anglais · Persan · Pashto" data-en="French · English · Persian · Pashto">Français · Anglais · Persan · Pashto</span>
         <span class="stag">Strasbourg, France</span>
         <span class="stag" data-fr="CAP Installation Thermique" data-en="Thermal Installation Degree">CAP Installation Thermique</span>
-        <span class="stag" data-fr="Leadership & Entrepreneuriat" data-en="Leadership & Entrepreneurship">Leadership & Entrepreneuriat</span>
+        <span class="stag" data-fr="Vision & Entrepreneuriat" data-en="Vision & Entrepreneurship">Vision & Entrepreneuriat</span>
       </div>
     </div>
   </div>
@@ -446,7 +485,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
         <span class="pillar-idx">01</span>
         <span class="pillar-title" data-fr="Entrepreneuriat" data-en="Entrepreneurship">Entrepreneuriat</span>
       </div>
-      <p class="pillar-desc" data-fr="Je déploie des projets avec une approche structurée et scientifique — transformant chaque compétence acquise en levier de valeur. Mon focus principal s'oriente vers le développement d’actifs et l’indépendance financière pérenne." data-en="I deploy projects with a structured and scientific approach — transforming every acquired skill into value leverage. My main focus is directed toward asset development and sustainable financial independence.">Je déploie des projets avec une approche structurée et scientifique — transformant chaque compétence acquise en levier de valeur. Mon focus principal s'oriente vers le développement d’actifs et l’indépendance financière pérenne.</p>
+      <p class="pillar-desc" data-fr="Je déploie des projets avec une approche structurée — transformant chaque compétence acquise en levier de valeur. Mon focus principal s'oriente vers le développement d’actifs et l’indépendance financière pérenne." data-en="I deploy projects with a structured approach — transforming every acquired skill into value leverage. My main focus is directed toward asset development and sustainable financial independence.">Je déploie des projets avec une approche structurée — transformant chaque compétence acquise en levier de valeur. Mon focus principal s'oriente vers le développement d’actifs et l’indépendance financière pérenne.</p>
     </div>
     <div class="pillar-card">
       <div class="pillar-top">
@@ -474,40 +513,62 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 
 <div class="sep"></div>
 
+<section class="sec" id="quotes">
+  <div class="eyebrow R" data-fr="Pensées & Réflexions" data-en="Thoughts & Quotes">Pensées & Réflexions</div>
+  <h2 class="sh2 R Rd1" data-fr="Extraits de mes publications sur les <em>réseaux.</em>" data-en="Excerpts from my social media <em>publications.</em>">Extraits de mes publications sur les <em>réseaux.</em></h2>
+  
+  <div class="quotes-grid R Rd2">
+    <div class="quote-card">
+      <p class="quote-text" data-fr="&ldquo;Le succès durable ne se cherche pas dans le regard des autres, il se construit d'abord en étant en accord total avec sa propre vision.&rdquo;" data-en="&ldquo;Sustainable success is not found in the eyes of others; it is built first by being in total alignment with your own vision.&rdquo;">&ldquo;Le succès durable ne se cherche pas dans le regard des autres, il se construit d'abord en étant en accord total avec sa propre vision.&rdquo;</p>
+      <div class="quote-meta">Facebook · Rabnawaz Ghiasi</div>
+    </div>
+    <div class="quote-card">
+      <p class="quote-text" data-fr="&ldquo;Chaque expérience vécue sur le terrain est une leçon de stratégie. On apprend autant sur un plan technique que sur l'art de mener un projet à son excellence.&rdquo;" data-en="&ldquo;Every experience lived in the field is a lesson in strategy. We learn as much on a technical level as on the art of leading a project to excellence.&rdquo;">&ldquo;Chaque expérience vécue sur le terrain est une leçon de stratégie. On apprend autant sur un plan technique que sur l'art de mener un projet à son excellence.&rdquo;</p>
+      <div class="quote-meta">Facebook · Rabnawaz Ghiasi</div>
+    </div>
+  </div>
+  
+  <div style="margin-top: 2rem; text-align: center;" class="R Rd3">
+    <a href="https://www.facebook.com/share/1AWUggz85i/" target="_blank" class="btn-o" style="font-size: 0.5rem;" data-fr="Rejoindre mon compte Facebook" data-en="Join my Facebook account">Rejoindre mon compte Facebook</a>
+  </div>
+</section>
+
+<div class="sep"></div>
+
 <section class="sec" id="journey">
   <div class="eyebrow R" data-fr="Mon parcours" data-en="My journey">Mon parcours</div>
-  <h2 class="sh2 R Rd1" data-fr="Trajectoire d'excellence et <em>expertises.</em>" data-en="Trajectory of excellence and <em>expertises.</em>">Trajectoire d'excellence et <em>expertises.</em></h2>
+  <h2 class="sh2 R Rd1" data-fr="Trajectoire d'apprentissage et <em>évolution.</em>" data-en="Trajectory of learning and <em>evolution.</em>">Trajectoire d'apprentissage et <em>evolution.</em></h2>
   <div class="timeline R Rd2">
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year">2021–23</div>
       <div class="tl-content">
         <div class="tl-title" data-fr="CAP Monteur en Installation Thermique · Lycée Cachin" data-en="Thermal Installation Degree · Lycée Cachin">CAP Monteur en Installation Thermique · Lycée Cachin</div>
-        <div class="tl-sub" data-fr="Cherbourg. Apprentissage rigoureux de l'ingénierie des fluides, de la gestion des réseaux thermiques et de la lecture de plans complexes. Validation des bases de l'organisation opérationnelle." data-en="Cherbourg. Rigorous training in fluid engineering, thermal network management, and complex blueprint reading. Validation of operational organization bases.">Cherbourg. Apprentissage rigoureux de l'ingénierie des fluides, de la gestion des réseaux thermiques et de la lecture de plans complexes. Validation des bases de l'organisation opérationnelle.</div>
+        <div class="tl-sub" data-fr="Cherbourg. Apprentissage de l'ingénierie des fluides, de la gestion des réseaux thermiques et de la lecture de plans. Validation des bases de la rigueur opérationnelle." data-en="Cherbourg. Training in fluid engineering, thermal network management, and blueprint reading. Validation of operational organization bases.">Cherbourg. Apprentissage de l'ingénierie des fluides, de la gestion des réseaux thermiques et de la lecture de plans. Validation des bases de l'organisation opérationnelle.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year">2022–25</div>
       <div class="tl-content">
-        <div class="tl-title" data-fr="Développement de la polyvalence industrielle" data-en="Industrial versatility development">Développement de la polyvalence industrielle</div>
-        <div class="tl-sub" data-fr="Expériences managériales et de gestion opérationnelle de flux (artisanat d'excellence, gestion des stocks, management d'équipe chez Domino's et Boulangerie Bâtard). Une école de l'agilité commerciale et de la réactivité." data-en="Managerial and operational flux management experiences (craftsmanship, stock control, team management at Domino's and Boulangerie Bâtard). A school of commercial agility and responsiveness.">Expériences managériales et de gestion opérationnelle de flux (artisanat d'excellence, gestion des stocks, management d'équipe chez Domino's et Boulangerie Bâtard). Une école de l'agilité commerciale et de la réactivité.</div>
+        <div class="tl-title" data-fr="Expériences et Polyvalence Métier" data-en="Experience & Professional Versatility">Expériences et Polyvalence Métier</div>
+        <div class="tl-sub" data-fr="Développement de l'adaptabilité à travers des missions variées dans l'artisanat, la gestion de flux et le travail d'équipe (Boulangerie Bâtard, Domino's Pizza). Une école de la réactivité et du commerce." data-en="Development of adaptability through varied missions in craftsmanship, flow management, and teamwork (Boulangerie Bâtard, Domino's Pizza). A school of responsiveness and commerce.">Développement de l'adaptabilité à travers des missions variées dans l'artisanat, la gestion de flux et le travail d'équipe (Boulangerie Bâtard, Domino's Pizza). Une école de l'agilité commerciale et de la réactivité.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year">2025–26</div>
       <div class="tl-content">
-        <div class="tl-title" data-fr="Strasbourg — Ancrage Corporate et Projets" data-en="Strasbourg — Corporate Integration & Ventures">Strasbourg — Ancrage Corporate et Projets</div>
-        <div class="tl-sub" data-fr="Chauffagiste expert au sein d'Eiffage Énergie Systèmes (Clévia Est). Pilotage technique d'installations complexes sur des chantiers d'envergure (notamment hospitaliers). En parallèle, structuration de mes entreprises." data-en="Expert heating engineer within Eiffage Énergie Systèmes (Clévia Est). Technical steering of complex installations on large-scale worksites (notably hospital grade). In parallel, structuring my corporate ventures.">Chauffagiste expert au sein d'Eiffage Énergie Systèmes (Clévia Est). Pilotage technique d'installations complexes sur des chantiers d'envergure (notamment hospitaliers). En parallèle, structuration de mes entreprises.</div>
+        <div class="tl-title" data-fr="Strasbourg — Expériences Techniques et Projets" data-en="Strasbourg — Technical Experience & Ventures">Strasbourg — Expériences Techniques et Projets</div>
+        <div class="tl-sub" data-fr="Arrivée à Strasbourg. Réalisation de missions techniques en installations thermiques sur des chantiers d'envergure (notamment hospitaliers), tout en structurant en parallèle ma vision d'indépendant." data-en="Arrival in Strasbourg. Execution of technical thermal installation missions on large-scale worksites (notably hospital grade), while simultaneously structuring my independent vision.">Arrivée à Strasbourg. Réalisation de missions techniques en installations thermiques sur des chantiers d'envergure (notamment hospitaliers), tout en structurant en parallèle ma vision d'indépendant.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year" style="color:var(--gold3)">2026 →</div>
       <div class="tl-content">
-        <div class="tl-title" style="color:var(--gold2)" data-fr="Déploiement à l'échelle" data-en="Scale deployment">Déploiement à l'échelle</div>
-        <div class="tl-sub" data-fr="Lancement opérationnel de mes structures, intensification de mon empreinte média internationale et déploiement de conférences de leadership." data-en="Operational launch of my corporate frameworks, expansion of my international media footprint, and deployment of leadership conferences.">Lancement opérationnel de mes structures, intensification de mon empreinte média internationale et déploiement de conférences de leadership.</div>
+        <div class="tl-title" style="color:var(--gold2)" data-fr="Déploiement Entrepreneurial" data-en="Entrepreneurial Deployment">Déploiement Entrepreneurial</div>
+        <div class="tl-sub" data-fr="Lancement de mes propres structures, intensification de ma présence digitale multilingue et déploiement de mes interventions publiques." data-en="Launch of my own business structures, expansion of my multilingual digital presence, and deployment of public speaking engagements.">Lancement de mes propres structures, intensification de ma présence digitale multilingue et déploiement de mes interventions publiques.</div>
       </div>
     </div>
   </div>
@@ -518,7 +579,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   <div class="vorn R">❧</div>
   <div class="eyebrow R" style="justify-content:center" data-fr="Philosophie de vie" data-en="Philosophy">Philosophie de vie</div>
   <p class="vquote R Rd1" data-fr="La véritable puissance ne réside pas dans la vitesse, mais dans la clarté de la <em>direction</em> et la conscience de chaque geste." data-en="True power lies not in speed, but in the clarity of <em>direction</em> and intentional awareness behind every gesture.">La véritable puissance ne réside pas dans la vitesse, mais dans la clarté de la <em>direction</em> et la conscience de chaque geste.</p>
-  <p class="vsub R Rd2" data-fr="Je crois en une réussite totale qui honore nos racines tout en repoussant constamment nos frontières. Le succès durable naît d'une lucidité absolue envers soi-même et de l'audace d'exécuter sa vision sans compromis." data-en="I believe in total success that honors our roots while constantly expanding our horizons. Long-term success is born from absolute self-awareness and the audacity to execute one's vision without compromise.">Je crois en une réussite totale qui honore nos racines tout en repoussant constamment nos frontières. Le succès durable naît d'une lucidité absolue envers soi-même et de l'audace d'exécuter sa vision sans compromis.</p>
+  <p class="vsub R Rd2" data-fr="Je crois en une réussite totale qui honore nos racines tout en repoussant constamment nos frontières. Le succès durable naît d'une clarté absolue envers soi-même et de l'audace d'exécuter sa vision sans compromis." data-en="I believe in total success that honors our roots while constantly expanding our horizons. Long-term success is born from absolute clarity and the audacity to execute one's vision without compromise.">Je crois en une réussite totale qui honore nos racines tout en repoussant constamment nos frontières. Le succès durable naît d'une clarté absolue envers soi-même et de l'audace d'exécuter sa vision sans compromis.</p>
 </section>
 
 <section class="sec" id="contact">
@@ -526,11 +587,10 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     <div class="R">
       <div class="eyebrow" data-fr="Partenariats & Synergies" data-en="Partnerships & Synergies">Partenariats & Synergies</div>
       <h2 class="ch" data-fr="Créons de la <em>valeur.</em>" data-en="Let's build <em>value.</em>">Créons de la <em>valeur.</em></h2>
-      <p class="csub" data-fr="Pour toute proposition de collaboration stratégique, intervention publique ou projet d'envergure, échangeons de manière concrète." data-en="For any strategic collaboration proposal, public speaking request, or large-scale project, let's establish a direct and productive dialogue.">Pour toute proposition de collaboration stratégique, intervention publique ou projet d'envergure, échangeons de manière concrète.</p>
+      <p class="csub" data-fr="Pour toute proposition de collaboration, intervention publique ou projet de création, échangeons de manière concrète." data-en="For any collaboration proposal, public speaking request, or creation project, let's establish a direct and productive dialogue.">Pour toute proposition de collaboration, intervention publique ou projet de création, échangeons de manière concrète.</p>
       <div class="clinks">
         <a href="mailto:rabnawazshinwari1@gmail.com" class="crow"><span class="clbl">Email</span><span class="cval">rabnawazshinwari1@gmail.com</span></a>
-        <a href="tel:+33651532857" class="crow"><span class="clbl">Téléphone</span><span class="cval">+33 6 51 53 28 57</span></a>
-        <a href="#" class="crow"><span class="clbl">Facebook</span><span class="cval">@RabnawazGhiasi</span></a>
+        <a href="https://www.facebook.com/share/1AWUggz85i/" target="_blank" class="crow"><span class="clbl">Facebook</span><span class="cval">@RabnawazGhiasi</span></a>
         <a href="#" class="crow"><span class="clbl">Adresse</span><span class="cval">Strasbourg, 67000, France</span></a>
       </div>
     </div>
