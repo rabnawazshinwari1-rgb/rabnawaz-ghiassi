@@ -26,32 +26,37 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 ::-webkit-scrollbar-track{background:var(--ink)}
 ::-webkit-scrollbar-thumb{background:var(--gold)}
 
-/* ═══ NAV ═══ */
+/* ═══ NAV OPTIMISÉE POUR MOBILE ═══ */
 .nav{
   position:fixed;inset:0 0 auto 0;z-index:999;height:60px;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  padding:0 1.25rem;
-  background:rgba(8,17,31,0.93);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 0.75rem;
+  background:rgba(8,17,31,0.95);
   backdrop-filter:blur(24px);border-bottom:1px solid var(--line);
 }
 .nav-logo{
   font-family:'Cormorant Garamond',serif;font-weight:500;
-  font-size:1rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--cream);flex-shrink:0;display:flex;align-items:center;gap:0.5rem;
+  font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--cream);flex-shrink:0;display:flex;align-items:center;gap:0.3rem;
 }
+.nav-logo .full-name{display:none} /* Masqué sur mobile */
+.nav-logo .short-name{display:inline} /* Visible sur mobile */
+
 .nav-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold-glow);flex-shrink:0}
-.nav-links{display:flex;list-style:none}
+.nav-links{display:flex;list-style:none;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0.25rem}
+.nav-links::-webkit-scrollbar{display:none} /* Cache la barre de défilement des liens sur mobile */
+
 .nav-links a{
-  font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--text2);padding:0.4rem 0.55rem;transition:color 0.2s;white-space:nowrap;
+  font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text2);padding:0.4rem 0.4rem;transition:color 0.2s;white-space:nowrap;
 }
 .nav-links a:hover{color:var(--gold2)}
-.nav-langs{display:flex;gap:2px;flex-shrink:0}
+.nav-langs{display:flex;gap:1px;flex-shrink:0}
 .nlang{
-  font-family:'Cormorant Garamond',serif;font-size:0.7rem;letter-spacing:0.1em;
-  color:var(--text2);padding:0.22rem 0.5rem;border:1px solid transparent;transition:all 0.2s;
+  font-family:'Cormorant Garamond',serif;font-size:0.65rem;letter-spacing:0.05em;
+  color:var(--text2);padding:0.2rem 0.35rem;border:1px solid transparent;transition:all 0.2s;
 }
-.nlang.on{color:var(--gold);border-color:var(--line)}
+.nlang.on{color:var(--gold);border-color:var(--line);background:var(--gold-light)}
 .nlang:hover{color:var(--gold2)}
 
 /* ═══ HERO ═══ */
@@ -80,10 +85,8 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   font-size:0.52rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);
   margin-bottom:2rem;
   opacity:0;animation:up 0.8s 0.1s ease forwards;
-  flex-wrap:nowrap;width:100%;justify-content:center;
 }
-.hero-badge span:nth-child(2){white-space:normal;max-width:90vw}
-.hero-badge-line{width:1.75rem;height:1px;background:currentColor;opacity:0.5;flex-shrink:0}
+.hero-badge-line{width:1.75rem;height:1px;background:currentColor;opacity:0.5}
 
 .hero-h1{
   font-family:'Cormorant Garamond',serif;font-weight:300;
@@ -251,7 +254,6 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(184,147,90,0.045) 0%,transparent 65%);
 }
-.vorn R{navy-decoration:none}
 .vorn{font-family:'Cormorant Garamond',serif;font-size:4.5rem;color:rgba(184,147,90,0.1);line-height:1;margin-bottom:1rem}
 .vquote{
   font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;
@@ -317,6 +319,9 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 /* ═══ TABLET ═══ */
 @media(min-width:600px){
   .nav{padding:0 2rem}
+  .nav-logo{font-size:1rem;letter-spacing:0.14em;gap:0.5rem}
+  .nav-logo .full-name{display:inline}
+  .nav-logo .short-name{display:none}
   .hero{padding:70px 2rem 3rem}
   .sec{padding:6rem 2rem}
   .sep{margin:0 2rem}
@@ -331,7 +336,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 /* ═══ DESKTOP ═══ */
 @media(min-width:960px){
   .nav{padding:0 3.5rem}
-  .nav-links a{font-size:0.58rem;padding:0.4rem 0.8rem}
+  .nav-links a{font-size:0.58rem;padding:0.4rem 0.8rem;letter-spacing:0.2em}
   .hero{padding:72px 3.5rem 4rem}
   .sec{padding:7.5rem 3.5rem}
   .sep{margin:0 3.5rem}
@@ -358,7 +363,11 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 <body>
 
 <nav class="nav">
-  <div class="nav-logo"><span class="nav-dot"></span>R. Shinwari</div>
+  <div class="nav-logo">
+    <span class="nav-dot"></span>
+    <span class="full-name">R. Shinwari</span>
+    <span class="short-name">R. S.</span>
+  </div>
   <ul class="nav-links">
     <li><a href="#story" data-fr="Mon histoire" data-en="My story">Mon histoire</a></li>
     <li><a href="#pillars" data-fr="Domaines" data-en="Domains">Domaines</a></li>
@@ -423,8 +432,8 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
     <div>
       <div class="eyebrow R" data-fr="Qui suis-je" data-en="Who I am">Qui suis-je</div>
       <h2 class="sh2 R Rd1" data-fr="Je ne viens pas d'un milieu facile. C'est pour ça que je construis <em>différemment.</em>" data-en="I don't come from an easy background. That's why I build <em>differently.</em>">Je ne viens pas d'un milieu facile. C'est pour ça que je construis <em>différemment.</em></h2>
-      <p class="story-body R Rd1" data-fr="Plombier chauffagiste de métier, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur." data-en="A plumber and heating engineer by trade, I learned to build with my hands before building with my ideas. <strong>What I learned on worksites — rigor, method, respect for work well done</strong> — I now apply to my entrepreneurial projects.">Plombier chauffagiste de métier, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur.</p>
-      <p class="story-body R Rd1" data-fr="Né en Afghanistan, grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais." data-en="Born in Afghanistan, raised between cultures, I speak French, English, Persian and Pashto. This richness is not a detail — it is my <strong>greatest strength</strong>. It allows me to reach millions of people that traditional content creators never reach.">Né en Afghanistan, grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais.</p>
+      <p class="story-body R Rd1" data-fr="Né le 01 novembre 2003 à Baghlan, Afghanistan, et de métier plombier chauffagiste, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur." data-en="Born on November 01, 2003, in Baghlan, Afghanistan, and a plumber and heating engineer by trade, I learned to build with my hands before building with my ideas. <strong>What I learned on worksites — rigor, method, respect for work well done</strong> — I now apply to my entrepreneurial projects.">Né le 01 novembre 2003 à Baghlan, Afghanistan, et de métier plombier chauffagiste, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur.</p>
+      <p class="story-body R Rd1" data-fr="Grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais." data-en="Raised between cultures, I speak French, English, Persian and Pashto. This richness is not a detail — it is my <strong>greatest strength</strong>. It allows me to reach millions of people that traditional content creators never reach.">Grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais.</p>
       <blockquote class="pull R Rd2" data-fr="&ldquo;On ne construit pas sa vie comme on construit une maison — mais les deux demandent les mêmes qualités : une bonne fondation, de la patience et du travail.&rdquo;" data-en="&ldquo;You don't build your life like you build a house — but both require the same qualities: a solid foundation, patience and work.&rdquo;">&ldquo;On ne construit pas sa vie comme on construit une maison — mais les deux demandent les mêmes qualités : une bonne fondation, de la patience et du travail.&rdquo;</blockquote>
       <div class="stags R Rd2">
         <span class="stag" data-fr="Pashto · Dari · Français · Anglais" data-en="Pashto · Dari · French · English">Pashto · Dari · Français · Anglais</span>
@@ -561,4 +570,13 @@ function setLang(l){
 const obs=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
 },{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.R').forEach(el=>obs.observe
+document.querySelectorAll('.R').forEach(el=>obs.observe(el));
+document.getElementById('fsub').addEventListener('click',function(){
+  const done=cur==='fr'?'Envoyé ✓':'Sent ✓';
+  const orig=cur==='fr'?'Envoyer →':'Send →';
+  this.textContent=done;this.style.background='var(--gold)';this.style.color='var(--ink)';
+  setTimeout(()=>{this.textContent=orig;this.style.background='';this.style.color=''},3000);
+});
+</script>
+</body>
+</html>
