@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="google-site-verification" content="aZ6wKwLm68Fh9npX5PZDRZupQRA5myl6sqjAcnoRsoE" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rabnawaz Ghiassi — créateur de contenu et public speaker. Strasbourg, France.">
+<meta name="description" content="Rabnawaz Ghiassi — content creator and public speaker. Strasbourg, France.">
 <title>Rabnawaz Ghiassi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 ::-webkit-scrollbar-track{background:var(--ink)}
 ::-webkit-scrollbar-thumb{background:var(--gold)}
 
-/* ═══ NAV OPTIMISÉE POUR MOBILE ═══ */
+/* ═══ NAV ═══ */
 .nav{
   position:fixed;inset:0 0 auto 0;z-index:999;height:60px;
   display:flex;align-items:center;justify-content:space-between;
@@ -39,25 +39,18 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;
   color:var(--cream);flex-shrink:0;display:flex;align-items:center;gap:0.3rem;
 }
-.nav-logo .full-name{display:none} /* Masqué sur mobile */
-.nav-logo .short-name{display:inline} /* Visible sur mobile */
+.nav-logo .full-name{display:none}
+.nav-logo .short-name{display:inline}
 
 .nav-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold-glow);flex-shrink:0}
 .nav-links{display:flex;list-style:none;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0.25rem}
-.nav-links::-webkit-scrollbar{display:none} /* Cache la barre de défilement des liens sur mobile */
+.nav-links::-webkit-scrollbar{display:none}
 
 .nav-links a{
   font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;
   color:var(--text2);padding:0.4rem 0.4rem;transition:color 0.2s;white-space:nowrap;
 }
 .nav-links a:hover{color:var(--gold2)}
-.nav-langs{display:flex;gap:1px;flex-shrink:0}
-.nlang{
-  font-family:'Cormorant Garamond',serif;font-size:0.65rem;letter-spacing:0.05em;
-  color:var(--text2);padding:0.2rem 0.35rem;border:1px solid transparent;transition:all 0.2s;
-}
-.nlang.on{color:var(--gold);border-color:var(--line);background:var(--gold-light)}
-.nlang:hover{color:var(--gold2)}
 
 /* ═══ HERO ═══ */
 .hero{
@@ -99,7 +92,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   display:block;color:transparent;
   -webkit-text-stroke:1.5px var(--gold2);
   letter-spacing:0.09em;
-  font-size: 0.85em; /* Un peu plus petit que le prénom */
+  font-size: 0.85em;
 }
 
 .hero-sep{
@@ -221,7 +214,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 .pillar-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.1rem;color:var(--cream);letter-spacing:0.02em}
 .pillar-desc{font-size:0.82rem;line-height:1.9;color:var(--text2);font-weight:300}
 
-/* ═══ JOURNEY — timeline ═══ */
+/* ═══ JOURNEY ═══ */
 .timeline{display:flex;flex-direction:column;gap:0;margin-top:1.75rem}
 .tl-item{
   display:grid;grid-template-columns:80px 1fr;gap:1.25rem;
@@ -366,20 +359,16 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 <nav class="nav">
   <div class="nav-logo">
     <span class="nav-dot"></span>
-    <span class="full-name">R. Ghiasi</span>
+    <span class="full-name">R. Ghiassi</span>
     <span class="short-name">R. G.</span>
   </div>
   <ul class="nav-links">
-    <li><a href="#story" data-fr="Mon histoire" data-en="My story">Mon histoire</a></li>
-    <li><a href="#pillars" data-fr="Domaines" data-en="Domains">Domaines</a></li>
-    <li><a href="#journey" data-fr="Parcours" data-en="Journey">Parcours</a></li>
-    <li><a href="#vision" data-fr="Vision" data-en="Vision">Vision</a></li>
+    <li><a href="#story">My story</a></li>
+    <li><a href="#pillars">Focus areas</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#vision">Vision</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-langs">
-    <button class="nlang on" onclick="setLang('fr')">FR</button>
-    <button class="nlang" onclick="setLang('en')">EN</button>
-  </div>
 </nav>
 
 <section class="hero" id="hero">
@@ -388,37 +377,37 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   <div class="hero-inner">
     <div class="hero-badge">
       <span class="hero-badge-line"></span>
-      <span data-fr="Strasbourg, France · En construction" data-en="Strasbourg, France · Under construction">Strasbourg, France · En construction</span>
+      <span>Strasbourg, France</span>
       <span class="hero-badge-line"></span>
     </div>
     <h1 class="hero-h1">
       <span class="h1-first">Rabnawaz</span>
-      <span class="h1-last">Ghiasi</span>
+      <span class="h1-last">Ghiassi</span>
     </h1>
     <div class="hero-sep">
       <div class="hsep-l"></div>
       <div class="hsep-d"></div>
       <div class="hsep-l r"></div>
     </div>
-    <p class="hero-tagline" data-fr="Je construis ma vie avec <strong>mes mains</strong> et ma pensée. Du chantier à la scène — je suis en train de devenir quelqu'un." data-en="I build my life with <strong>my hands</strong> and my mind. From the worksite to the stage — I am becoming someone.">Je construis ma vie avec <strong>mes mains</strong> et ma pensée. Du chantier à la scène — je suis en train de devenir quelqu'un.</p>
+    <p class="hero-tagline">I build my life with <strong>my hands</strong> and my mind. From the worksite to the stage — I am becoming someone.</p>
     <div class="hero-roles">
-      <span class="role-pill" data-fr="Entrepreneur en devenir" data-en="Entrepreneur in the making">Entrepreneur en devenir</span>
-      <span class="role-pill" data-fr="Créateur de contenu" data-en="Content creator">Créateur de contenu</span>
-      <span class="role-pill" data-fr="Public Speaker" data-en="Public Speaker">Public Speaker</span>
+      <span class="role-pill">Builder in the making</span>
+      <span class="role-pill">Content creator</span>
+      <span class="role-pill">Public speaker</span>
     </div>
     <div class="hero-cta">
-      <a href="#story" class="btn-g" data-fr="Mon histoire" data-en="My story">Mon histoire</a>
-      <a href="#contact" class="btn-o" data-fr="Me contacter" data-en="Get in touch">Me contacter</a>
+      <a href="#story" class="btn-g">My story</a>
+      <a href="#contact" class="btn-o">Get in touch</a>
     </div>
     <div class="hero-stats">
-      <div class="hstat"><span class="hstat-n">4</span><span class="hstat-l" data-fr="Langues" data-en="Languages">Langues</span></div>
-      <div class="hstat"><span class="hstat-n">3</span><span class="hstat-l" data-fr="Métiers" data-en="Trades">Métiers</span></div>
-      <div class="hstat"><span class="hstat-n">∞</span><span class="hstat-l" data-fr="Ambition" data-en="Ambition">Ambition</span></div>
+      <div class="hstat"><span class="hstat-n">4</span><span class="hstat-l">Languages</span></div>
+      <div class="hstat"><span class="hstat-n">3</span><span class="hstat-l">Trades</span></div>
+      <div class="hstat"><span class="hstat-n">∞</span><span class="hstat-l">Ambition</span></div>
     </div>
   </div>
   <div class="hero-scroll">
     <div class="hscroll-bar"></div>
-    <span class="hscroll-txt" data-fr="Défiler" data-en="Scroll">Défiler</span>
+    <span class="hscroll-txt">Scroll</span>
   </div>
 </section>
 
@@ -428,19 +417,19 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   <div class="story-layout">
     <div class="story-aside R">
       <span class="aside-num">01</span>
-      <span class="aside-lbl" data-fr="Mon histoire" data-en="My story">Mon histoire</span>
+      <span class="aside-lbl">My story</span>
     </div>
     <div>
-      <div class="eyebrow R" data-fr="Qui suis-je" data-en="Who I am">Qui suis-je</div>
-      <h2 class="sh2 R Rd1" data-fr="Je ne viens pas d'un milieu facile. C'est pour ça que je construis <em>différemment.</em>" data-en="I don't come from an easy background. That's why I build <em>differently.</em>">Je ne viens pas d'un milieu facile. C'est pour ça que je construis <em>différemment.</em></h2>
-      <p class="story-body R Rd1" data-fr="Né le 01 novembre 2003 à Baghlan, Afghanistan, et de métier plombier chauffagiste, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur." data-en="Born on November 01, 2003, in Baghlan, Afghanistan, and a plumber and heating engineer by trade, I learned to build with my hands before building with my ideas. <strong>What I learned on worksites — rigor, method, respect for work well done</strong> — I now apply to my entrepreneurial projects.">Né le 01 novembre 2003 à Baghlan, Afghanistan, et de métier plombier chauffagiste, j'ai appris à construire avec mes mains avant de construire avec mes idées. <strong>Ce que j'ai appris sur les chantiers — la rigueur, la méthode, le respect du travail bien fait</strong> — je l'applique aujourd'hui à mes projets d'entrepreneur.</p>
-      <p class="story-body R Rd1" data-fr="Grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais." data-en="Raised between cultures, I speak French, English, Persian and Pashto. This richness is not a detail — it is my <strong>greatest strength</strong>. It allows me to reach millions of people that traditional content creators never reach.">Grandi entre les cultures, je parle français, anglais, persan et pashto. Cette richesse n'est pas un détail — c'est ma <strong>plus grande force</strong>. Elle me permet de toucher des millions de personnes que les créateurs de contenu traditionnels n'atteignent jamais.</p>
-      <blockquote class="pull R Rd2" data-fr="&ldquo;On ne construit pas sa vie comme on construit une maison — mais les deux demandent les mêmes qualités : une bonne fondation, de la patience et du travail.&rdquo;" data-en="&ldquo;You don't build your life like you build a house — but both require the same qualities: a solid foundation, patience and work.&rdquo;">&ldquo;On ne construit pas sa vie comme on construit une maison — mais les deux demandent les mêmes qualités : une bonne fondation, de la patience et du travail.&rdquo;</blockquote>
+      <div class="eyebrow R">Who I am</div>
+      <h2 class="sh2 R Rd1">I don't come from an easy background. That's why I build <em>differently.</em></h2>
+      <p class="story-body R Rd1">Born on November 1, 2003, in Baghlan, Afghanistan, and trained as a plumbing and heating engineer, I learned to build with my hands before I learned to build with my ideas. <strong>What I learned on job sites — rigor, method, and respect for work done right</strong> — I now apply to everything I'm building.</p>
+      <p class="story-body R Rd1">Raised between cultures, I speak French, English, Persian, and Pashto. This isn't a footnote — it's my <strong>greatest strength</strong>. It lets me reach people that most content creators never do.</p>
+      <blockquote class="pull R Rd2">"You don't build a life the way you build a house — but both demand the same things: a solid foundation, patience, and work."</blockquote>
       <div class="stags R Rd2">
-        <span class="stag" data-fr="Pashto · Dari · Français · Anglais" data-en="Pashto · Dari · French · English">Pashto · Dari · Français · Anglais</span>
+        <span class="stag">Pashto · Dari · French · English</span>
         <span class="stag">Strasbourg, France</span>
-        <span class="stag" data-fr="CAP Plomberie-Chauffage" data-en="Plumbing & Heating Certificate">CAP Plomberie-Chauffage</span>
-        <span class="stag" data-fr="Entrepreneur en devenir" data-en="Entrepreneur in the making">Entrepreneur en devenir</span>
+        <span class="stag">Plumbing &amp; Heating Certificate</span>
+        <span class="stag">Builder in the making</span>
       </div>
     </div>
   </div>
@@ -449,36 +438,36 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 <div class="sep"></div>
 
 <section class="sec" id="pillars">
-  <div class="eyebrow R" data-fr="Ce que je construis" data-en="What I build">Ce que je construis</div>
-  <h2 class="sh2 R Rd1" data-fr="Trois voix. Une <em>direction.</em>" data-en="Three voices. One <em>direction.</em>">Trois voix. Une <em>direction.</em></h2>
+  <div class="eyebrow R">What I'm building</div>
+  <h2 class="sh2 R Rd1">Three voices. One <em>direction.</em></h2>
   <div class="pillars-grid R Rd2">
     <div class="pillar-card">
       <div class="pillar-top">
         <span class="pillar-idx">01</span>
-        <span class="pillar-title" data-fr="Entrepreneur" data-en="Entrepreneur">Entrepreneur</span>
+        <span class="pillar-title">Founder</span>
       </div>
-      <p class="pillar-desc" data-fr="Je construis des projets avec méthode — une compétence à la fois, à fond. Mon objectif : bâtir une indépendance financière réelle à travers l'entrepreneuriat et l'immobilier." data-en="I build projects methodically — one skill at a time, fully committed. My goal: build real financial independence through entrepreneurship and real estate.">Je construis des projets avec méthode — une compétence à la fois, à fond. Mon objectif : bâtir une indépendance financière réelle à travers l'entrepreneuriat et l'immobilier.</p>
+      <p class="pillar-desc">I build projects with method — one skill at a time, fully committed. My goal: real financial independence through my own ventures and real estate.</p>
     </div>
     <div class="pillar-card">
       <div class="pillar-top">
         <span class="pillar-idx">02</span>
-        <span class="pillar-title" data-fr="Créateur de contenu" data-en="Content creator">Créateur de contenu</span>
+        <span class="pillar-title">Content creator</span>
       </div>
-      <p class="pillar-desc" data-fr="Je partage mes réflexions sur la vie, l'identité, la liberté et la société — en plusieurs langues. Pour des millions de personnes qui cherchent une voix authentique qui leur ressemble." data-en="I share my thoughts on life, identity, freedom and society — in multiple languages. For millions of people looking for an authentic voice that resembles them.">Je partage mes réflexions sur la vie, l'identité, la liberté et la société — en plusieurs langues. Pour des millions de personnes qui cherchent une voix authentique qui leur ressemble.</p>
+      <p class="pillar-desc">I share my thoughts on life, identity, freedom, and society — across multiple languages, for people looking for an authentic voice that speaks to them.</p>
     </div>
     <div class="pillar-card">
       <div class="pillar-top">
         <span class="pillar-idx">03</span>
-        <span class="pillar-title" data-fr="Public Speaker" data-en="Public Speaker">Public Speaker</span>
+        <span class="pillar-title">Public speaker</span>
       </div>
-      <p class="pillar-desc" data-fr="Prendre la parole en public, c'est transformer une pensée en impact. Je développe cette compétence pour inspirer, questionner et provoquer des conversations qui comptent." data-en="Speaking in public is turning a thought into impact. I develop this skill to inspire, question and provoke conversations that matter.">Prendre la parole en public, c'est transformer une pensée en impact. Je développe cette compétence pour inspirer, questionner et provoquer des conversations qui comptent.</p>
+      <p class="pillar-desc">Speaking in public turns a thought into impact. I'm developing this skill to inspire, question, and start conversations that matter.</p>
     </div>
     <div class="pillar-card">
       <div class="pillar-top">
         <span class="pillar-idx">04</span>
-        <span class="pillar-title" data-fr="Développement personnel" data-en="Personal development">Développement personnel</span>
+        <span class="pillar-title">Personal development</span>
       </div>
-      <p class="pillar-desc" data-fr="Avant tout le reste, je me construis moi-même. Discipline, clarté mentale, connaissance de soi — c'est la fondation sur laquelle tout le reste repose." data-en="Before everything else, I build myself. Discipline, mental clarity, self-knowledge — this is the foundation on which everything else rests.">Avant tout le reste, je me construis moi-même. Discipline, clarté mentale, connaissance de soi — c'est la fondation sur laquelle tout le reste repose.</p>
+      <p class="pillar-desc">Before anything else, I build myself. Discipline, mental clarity, self-knowledge — that's the foundation everything else stands on.</p>
     </div>
   </div>
 </section>
@@ -486,39 +475,39 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 <div class="sep"></div>
 
 <section class="sec" id="journey">
-  <div class="eyebrow R" data-fr="Mon parcours" data-en="My journey">Mon parcours</div>
-  <h2 class="sh2 R Rd1" data-fr="D'où je viens. Où je <em>vais.</em>" data-en="Where I come from. Where I'm <em>going.</em>">D'où je viens. Où je <em>vais.</em></h2>
+  <div class="eyebrow R">My journey</div>
+  <h2 class="sh2 R Rd1">Where I come from. Where I'm <em>going.</em></h2>
   <div class="timeline R Rd2">
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year">2021–23</div>
       <div class="tl-content">
-        <div class="tl-title" data-fr="CAP Monteur en installation thermique" data-en="Plumbing & Heating Certificate">CAP Monteur en installation thermique</div>
-        <div class="tl-sub" data-fr="Lycée Cachin, Cherbourg. Formation pratique et théorique. Apprentissage de la rigueur et de la méthode — les premières vraies leçons de ma vie professionnelle." data-en="Lycée Cachin, Cherbourg. Practical and theoretical training. Learning rigor and method — the first real lessons of my professional life.">Lycée Cachin, Cherbourg. Formation pratique et théorique. Apprentissage de la rigueur et de la méthode — les premières vraies leçons de ma vie professionnelle.</div>
+        <div class="tl-title">Plumbing &amp; Heating Certificate</div>
+        <div class="tl-sub">Lycée Cachin, Cherbourg. Hands-on and classroom training. My first real lessons in rigor and method.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year">2022–25</div>
       <div class="tl-content">
-        <div class="tl-title" data-fr="Premières expériences professionnelles" data-en="First professional experiences">Premières expériences professionnelles</div>
-        <div class="tl-sub" data-fr="Boulangerie, restauration, conditionnement — des métiers différents qui m'ont appris l'adaptabilité, l'humilité et la valeur du travail bien fait." data-en="Bakery, catering, packaging — different trades that taught me adaptability, humility and the value of work well done.">Boulangerie, restauration, conditionnement — des métiers différents qui m'ont appris l'adaptabilité, l'humilité et la valeur du travail bien fait.</div>
+        <div class="tl-title">Early work experience</div>
+        <div class="tl-sub">Bakery, food service, packaging — different trades that taught me adaptability, humility, and the value of work done right.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year">2025–26</div>
       <div class="tl-content">
-        <div class="tl-title" data-fr="Strasbourg — Nouveau départ" data-en="Strasbourg — New beginning">Strasbourg — Nouveau départ</div>
-        <div class="tl-sub" data-fr="Installé à Strasbourg, je travaille comme chauffagiste chez Eiffage et parallèlement je construis ma vision d'entrepreneur. Le chantier le matin, les projets le soir." data-en="Based in Strasbourg, I work as a heating engineer at Eiffage and simultaneously build my entrepreneurial vision. The worksite in the morning, projects in the evening.">Installé à Strasbourg, je travaille comme chauffagiste chez Eiffage et parallèlement je construis ma vision d'entrepreneur. Le chantier le matin, les projets le soir.</div>
+        <div class="tl-title">Strasbourg — New beginning</div>
+        <div class="tl-sub">Based in Strasbourg, I work as a heating engineer at Eiffage while building my own ventures on the side. The job site by day, projects by night.</div>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-year" style="color:var(--gold3)">2026 →</div>
       <div class="tl-content">
-        <div class="tl-title" style="color:var(--gold2)" data-fr="La prochaine étape — en cours" data-en="The next step — in progress">La prochaine étape — en cours</div>
-        <div class="tl-sub" data-fr="Lancement de mes premiers projets entrepreneuriaux, développement de ma présence en ligne, prise de parole publique. Le plus dur est fait : j'ai commencé." data-en="Launching my first entrepreneurial projects, developing my online presence, public speaking. The hardest part is done: I've started.">Lancement de mes premiers projets entrepreneuriaux, développement de ma présence en ligne, prise de parole publique. Le plus dur est fait : j'ai commencé.</div>
+        <div class="tl-title" style="color:var(--gold2)">The next step — in progress</div>
+        <div class="tl-sub">Launching my first projects, growing my online presence, and stepping into public speaking. The hardest part is done: I've started.</div>
       </div>
     </div>
   </div>
@@ -527,55 +516,47 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 <section class="vision-sec" id="vision">
   <div class="vglow"></div>
   <div class="vorn R">❧</div>
-  <div class="eyebrow R" style="justify-content:center" data-fr="Ce en quoi je crois" data-en="What I believe">Ce en quoi je crois</div>
-  <p class="vquote R Rd1" data-fr="On ne devient pas grand en courant plus vite. On le devient en marchant avec plus de <em>conscience</em>." data-en="You don't become great by running faster. You become great by walking with more <em>awareness</em>.">On ne devient pas grand en courant plus vite. On le devient en marchant avec plus de <em>conscience</em>.</p>
-  <p class="vsub R Rd2" data-fr="Je crois qu'on peut changer sa vie sans trahir qui on est. Que la réussite la plus solide commence toujours par une honnêteté brutale avec soi-même — et le courage de commencer." data-en="I believe you can change your life without betraying who you are. That the most solid success always starts with brutal honesty with yourself — and the courage to begin.">Je crois qu'on peut changer sa vie sans trahir qui on est. Que la réussite la plus solide commence toujours par une honnêteté brutale avec soi-même — et le courage de commencer.</p>
+  <div class="eyebrow R" style="justify-content:center">What I believe</div>
+  <p class="vquote R Rd1">You don't become great by running faster. You become great by walking with more <em>awareness</em>.</p>
+  <p class="vsub R Rd2">I believe you can change your life without betraying who you are. That real success always starts with brutal honesty with yourself — and the courage to begin.</p>
 </section>
 
 <section class="sec" id="contact">
   <div class="contact-layout">
     <div class="R">
-      <div class="eyebrow" data-fr="Restons en contact" data-en="Stay in touch">Restons en contact</div>
-      <h2 class="ch" data-fr="Parlons-nous <em>vraiment.</em>" data-en="Let's actually <em>talk.</em>">Parlons-nous <em>vraiment.</em></h2>
-      <p class="csub" data-fr="Un projet, une collaboration, une question. Je suis là. Les vraies conversations m'intéressent plus que les messages polis." data-en="A project, a collaboration, a question. I'm here. Real conversations interest me more than polite messages.">Un projet, une collaboration, une question. Je suis là. Les vraies conversations m'intéressent plus que les messages polis.</p>
+      <div class="eyebrow">Stay in touch</div>
+      <h2 class="ch">Let's actually <em>talk.</em></h2>
+      <p class="csub">A project, a collaboration, a question. I'm here. Real conversations interest me more than polite messages.</p>
       <div class="clinks">
-        <a href="mailto:rabnawazshinwari1@gmail.com" class="crow"><span class="clbl">Email</span><span class="cval">rabnawazshinwari1@gmail.com</span></a>
-        <a href="#" class="crow"><span class="clbl">Facebook</span><span class="cval">@RabnawazGhiasi</span></a>
+        <a href="mailto:rabnawaz.ghiassi@gmail.com" class="crow"><span class="clbl">Email</span><span class="cval">rabnawaz.ghiassi@gmail.com</span></a>
+        <a href="#" class="crow"><span class="clbl">Facebook</span><span class="cval">@RabnawazGhiassi</span></a>
         <a href="#" class="crow"><span class="clbl">Location</span><span class="cval">Strasbourg, 67000, France</span></a>
       </div>
     </div>
     <div class="R Rd1">
       <div class="form">
-        <div class="fg"><label class="fl" data-fr="Ton prénom" data-en="Your name">Ton prénom</label><input class="fi" type="text" placeholder="Comment tu t'appelles ?" /></div>
-        <div class="fg"><label class="fl">Email</label><input class="fi" type="email" placeholder="ton@email.com" /></div>
-        <div class="fg"><label class="fl" data-fr="Ton message" data-en="Your message">Ton message</label><textarea class="ft" placeholder="Dis-moi ce qui t'amène..."></textarea></div>
-        <button class="fsub" id="fsub" data-fr="Envoyer →" data-en="Send →">Envoyer →</button>
+        <div class="fg"><label class="fl">Your name</label><input class="fi" type="text" placeholder="What should I call you?" /></div>
+        <div class="fg"><label class="fl">Email</label><input class="fi" type="email" placeholder="you@email.com" /></div>
+        <div class="fg"><label class="fl">Your message</label><textarea class="ft" placeholder="Tell me what brings you here..."></textarea></div>
+        <button class="fsub" id="fsub">Send →</button>
       </div>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="fbrand">Rabnawaz <em>Ghiasi</em></div>
-  <div class="fnote" data-fr="© 2026 · Tous droits réservés" data-en="© 2026 · All rights reserved">© 2026 · Tous droits réservés</div>
+  <div class="fbrand">Rabnawaz <em>Ghiassi</em></div>
+  <div class="fnote">© 2026 · All rights reserved</div>
 </footer>
 
 <script>
-let cur='fr';
-function setLang(l){
-  cur=l;
-  document.querySelectorAll('.nlang').forEach(b=>b.classList.toggle('on',b.textContent.toLowerCase()===l));
-  document.querySelectorAll('[data-fr]').forEach(el=>{const t=el.getAttribute('data-'+l);if(t)el.innerHTML=t});
-}
 const obs=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
 },{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.R').forEach(el=>obs.observe(el));
 document.getElementById('fsub').addEventListener('click',function(){
-  const done=cur==='fr'?'Envoyé ✓':'Sent ✓';
-  const orig=cur==='fr'?'Envoyer →':'Send →';
-  this.textContent=done;this.style.background='var(--gold)';this.style.color='var(--ink)';
-  setTimeout(()=>{this.textContent=orig;this.style.background='';this.style.color=''},3000);
+  this.textContent='Sent ✓';this.style.background='var(--gold)';this.style.color='var(--ink)';
+  setTimeout(()=>{this.textContent='Send →';this.style.background='';this.style.color=''},3000);
 });
 </script>
 </body>
